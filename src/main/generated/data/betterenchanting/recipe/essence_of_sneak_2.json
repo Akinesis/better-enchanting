@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "betterenchanting:essence_of_sneak_3"
-    }
+    "betterenchanting:essence_of_sneak_3"
   ],
   "result": {
     "count": 1,

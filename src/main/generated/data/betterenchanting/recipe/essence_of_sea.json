@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:conduit"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "K": {
-      "item": "minecraft:dried_kelp_block"
-    },
-    "L": {
-      "item": "minecraft:prismarine_crystals"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:conduit",
+    "I": "betterenchanting:infused_lapis",
+    "K": "minecraft:dried_kelp_block",
+    "L": "minecraft:prismarine_crystals",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

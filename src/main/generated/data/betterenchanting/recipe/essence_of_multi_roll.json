@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:piston"
-    },
-    "D": {
-      "item": "minecraft:wind_charge"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "N": {
-      "tag": "minecraft:beds"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:piston",
+    "D": "minecraft:wind_charge",
+    "I": "betterenchanting:infused_lapis",
+    "N": "#minecraft:beds",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

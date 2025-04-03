@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:ghast_tear"
-    },
-    "B": {
-      "item": "minecraft:rabbit_foot"
-    },
-    "C": {
-      "item": "minecraft:torchflower"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:ghast_tear",
+    "B": "minecraft:rabbit_foot",
+    "C": "minecraft:torchflower",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

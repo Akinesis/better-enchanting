@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:arrow"
-    },
-    "B": {
-      "item": "minecraft:bow"
-    },
-    "C": {
-      "item": "minecraft:dragon_breath"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:arrow",
+    "B": "minecraft:bow",
+    "C": "minecraft:dragon_breath",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

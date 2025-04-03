@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:rabbit_foot"
-    },
-    "B": {
-      "item": "minecraft:emerald"
-    },
-    "C": {
-      "item": "minecraft:shulker_shell"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:rabbit_foot",
+    "B": "minecraft:emerald",
+    "C": "minecraft:shulker_shell",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:blaze_rod"
-    },
-    "D": {
-      "item": "minecraft:dragon_breath"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "R": {
-      "item": "minecraft:rose_bush"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "B": "minecraft:blaze_rod",
+    "D": "minecraft:dragon_breath",
+    "I": "betterenchanting:infused_lapis",
+    "R": "minecraft:rose_bush",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

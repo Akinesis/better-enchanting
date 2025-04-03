@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:shulker_box"
-    },
-    "G": {
-      "item": "minecraft:glowstone"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "M": {
-      "item": "minecraft:phantom_membrane"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:shulker_box",
+    "G": "minecraft:glowstone",
+    "I": "betterenchanting:infused_lapis",
+    "M": "minecraft:phantom_membrane",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

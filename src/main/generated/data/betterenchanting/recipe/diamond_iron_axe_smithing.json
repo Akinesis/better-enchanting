@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:diamond"
-  },
-  "base": {
-    "item": "minecraft:iron_axe"
-  },
+  "addition": "minecraft:diamond",
+  "base": "minecraft:iron_axe",
   "result": {
     "count": 1,
     "id": "minecraft:diamond_axe"
   },
-  "template": {
-    "item": "betterenchanting:diamond_upgrade_smithing_template"
-  }
+  "template": "betterenchanting:diamond_upgrade_smithing_template"
 }

@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:armadillo_scute"
-    },
-    "D": {
-      "item": "minecraft:diamond"
-    },
-    "H": {
-      "item": "minecraft:skeleton_skull"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "B": "minecraft:armadillo_scute",
+    "D": "minecraft:diamond",
+    "H": "minecraft:skeleton_skull",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

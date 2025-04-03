@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:experience_bottle"
-    },
-    "E": {
-      "item": "minecraft:emerald"
-    },
-    "L": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_dull"
-    }
+    "B": "minecraft:experience_bottle",
+    "E": "minecraft:emerald",
+    "L": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_dull"
   },
   "pattern": [
     " B ",

@@ -66,9 +66,9 @@ public class ModTradeOffers extends TradeOffers {
         public TradeOffer create(Entity entity, Random random) {
             int l;
             ItemStack itemStack;
-            RegistryEntryList.Named<Item> ingredients = Registries.ITEM.getOrCreateEntryList(ModItemTags.ENCHANTEMNT_INGREDIENT);
-            RegistryEntryList.Named<Item> essences = Registries.ITEM.getOrCreateEntryList(ModItemTags.ENCHANTMENT_ESSENCE);
-            RegistryEntryList.Named<Item> librarian = Registries.ITEM.getOrCreateEntryList(ModItemTags.LIBRARIAN_RARE_INGREDIENT);
+            RegistryEntryList.Named<Item> ingredients = Registries.ITEM.getOrThrow (ModItemTags.ENCHANTEMNT_INGREDIENT);
+            RegistryEntryList.Named<Item> essences = Registries.ITEM.getOrThrow(ModItemTags.ENCHANTMENT_ESSENCE);
+            RegistryEntryList.Named<Item> librarian = Registries.ITEM.getOrThrow(ModItemTags.LIBRARIAN_RARE_INGREDIENT);
 
             int price;
 
@@ -118,9 +118,9 @@ public class ModTradeOffers extends TradeOffers {
         public TradeOffer create(Entity entity, Random random) {
             int l;
             ItemStack itemStack;
-            RegistryEntryList.Named<Item> ingredients = Registries.ITEM.getOrCreateEntryList(ModItemTags.ENCHANTEMNT_INGREDIENT);
-            RegistryEntryList.Named<Item> essences = Registries.ITEM.getOrCreateEntryList(ModItemTags.ENCHANTMENT_ESSENCE);
-            RegistryEntryList.Named<Item> librarian = Registries.ITEM.getOrCreateEntryList(ModItemTags.LIBRARIAN_RARE_INGREDIENT);
+            RegistryEntryList.Named<Item> ingredients = Registries.ITEM.getOrThrow(ModItemTags.ENCHANTEMNT_INGREDIENT);
+            RegistryEntryList.Named<Item> essences = Registries.ITEM.getOrThrow(ModItemTags.ENCHANTMENT_ESSENCE);
+            RegistryEntryList.Named<Item> librarian = Registries.ITEM.getOrThrow(ModItemTags.LIBRARIAN_RARE_INGREDIENT);
 
             int price;
 

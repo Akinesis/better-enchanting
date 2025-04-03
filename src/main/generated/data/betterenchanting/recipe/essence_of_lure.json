@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:golden_carrot"
-    },
-    "B": {
-      "item": "minecraft:prismarine_crystals"
-    },
-    "C": {
-      "item": "minecraft:emerald_block"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:golden_carrot",
+    "B": "minecraft:prismarine_crystals",
+    "C": "minecraft:emerald_block",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

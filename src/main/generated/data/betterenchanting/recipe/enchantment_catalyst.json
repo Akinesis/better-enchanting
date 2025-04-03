@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:amethyst_shard"
-    },
-    "D": {
-      "item": "minecraft:diamond"
-    },
-    "E": {
-      "item": "minecraft:emerald"
-    },
-    "L": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "M": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:amethyst_shard",
+    "D": "minecraft:diamond",
+    "E": "minecraft:emerald",
+    "L": "betterenchanting:infused_lapis",
+    "M": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " D ",

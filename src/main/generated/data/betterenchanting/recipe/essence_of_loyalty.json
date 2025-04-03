@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:ender_pearl"
-    },
-    "B": {
-      "item": "minecraft:ghast_tear"
-    },
-    "C": {
-      "item": "minecraft:lead"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:ender_pearl",
+    "B": "minecraft:ghast_tear",
+    "C": "minecraft:lead",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

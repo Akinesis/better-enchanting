@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:nether_wart_block"
-    },
-    "D": {
-      "item": "minecraft:crying_obsidian"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "N": {
-      "item": "minecraft:fermented_spider_eye"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:nether_wart_block",
+    "D": "minecraft:crying_obsidian",
+    "I": "betterenchanting:infused_lapis",
+    "N": "minecraft:fermented_spider_eye",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:hay_block"
-    },
-    "D": {
-      "item": "minecraft:rooted_dirt"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "N": {
-      "item": "minecraft:oak_leaves"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:hay_block",
+    "D": "minecraft:rooted_dirt",
+    "I": "betterenchanting:infused_lapis",
+    "N": "minecraft:oak_leaves",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

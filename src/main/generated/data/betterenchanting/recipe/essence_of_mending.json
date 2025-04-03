@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:book"
-    },
-    "B": {
-      "item": "minecraft:anvil"
-    },
-    "C": {
-      "item": "betterenchanting:essence_of_experience"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:book",
+    "B": "minecraft:anvil",
+    "C": "betterenchanting:essence_of_experience",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

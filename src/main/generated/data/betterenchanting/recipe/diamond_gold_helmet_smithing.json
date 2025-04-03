@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:diamond"
-  },
-  "base": {
-    "item": "minecraft:golden_helmet"
-  },
+  "addition": "minecraft:diamond",
+  "base": "minecraft:golden_helmet",
   "result": {
     "count": 1,
     "id": "minecraft:diamond_helmet"
   },
-  "template": {
-    "item": "betterenchanting:diamond_upgrade_smithing_template"
-  }
+  "template": "betterenchanting:diamond_upgrade_smithing_template"
 }

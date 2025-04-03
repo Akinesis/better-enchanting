@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:glass_bottle"
-    },
-    "B": {
-      "item": "minecraft:wind_charge"
-    },
-    "C": {
-      "item": "minecraft:ender_pearl"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:glass_bottle",
+    "B": "minecraft:wind_charge",
+    "C": "minecraft:ender_pearl",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

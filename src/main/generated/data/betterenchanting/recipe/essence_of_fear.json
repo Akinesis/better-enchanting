@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:gunpowder"
-    },
-    "D": {
-      "item": "minecraft:creeper_banner_pattern"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "N": {
-      "item": "minecraft:tropical_fish_bucket"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:gunpowder",
+    "D": "minecraft:creeper_banner_pattern",
+    "I": "betterenchanting:infused_lapis",
+    "N": "minecraft:tropical_fish_bucket",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

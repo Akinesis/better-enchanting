@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:amethyst_shard"
-    },
-    "D": {
-      "item": "minecraft:diamond"
-    },
-    "G": {
-      "item": "minecraft:ghast_tear"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    }
+    "A": "minecraft:amethyst_shard",
+    "D": "minecraft:diamond",
+    "G": "minecraft:ghast_tear",
+    "I": "betterenchanting:infused_lapis"
   },
   "pattern": [
     "IDI",

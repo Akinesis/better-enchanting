@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:diamond"
-  },
-  "base": {
-    "item": "minecraft:golden_shovel"
-  },
+  "addition": "minecraft:diamond",
+  "base": "minecraft:golden_shovel",
   "result": {
     "count": 1,
     "id": "minecraft:diamond_shovel"
   },
-  "template": {
-    "item": "betterenchanting:diamond_upgrade_smithing_template"
-  }
+  "template": "betterenchanting:diamond_upgrade_smithing_template"
 }

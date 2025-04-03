@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "betterenchanting:soul_essence_2"
-    }
+    "betterenchanting:soul_essence_2"
   ],
   "result": {
     "count": 1,

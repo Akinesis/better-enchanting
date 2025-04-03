@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:golden_sword"
-    },
-    "B": {
-      "item": "minecraft:emerald_block"
-    },
-    "C": {
-      "item": "minecraft:netherite_scrap"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:golden_sword",
+    "B": "minecraft:emerald_block",
+    "C": "minecraft:netherite_scrap",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

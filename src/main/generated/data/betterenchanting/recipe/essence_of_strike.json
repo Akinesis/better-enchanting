@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:iron_block"
-    },
-    "D": {
-      "item": "minecraft:copper_block"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "N": {
-      "item": "minecraft:gold_ingot"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:iron_block",
+    "D": "minecraft:copper_block",
+    "I": "betterenchanting:infused_lapis",
+    "N": "minecraft:gold_ingot",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:diamond"
-    },
-    "D": {
-      "item": "minecraft:crying_obsidian"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "N": {
-      "item": "minecraft:iron_bars"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:diamond",
+    "D": "minecraft:crying_obsidian",
+    "I": "betterenchanting:infused_lapis",
+    "N": "minecraft:iron_bars",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:spectral_arrow"
-    },
-    "B": {
-      "item": "minecraft:obsidian"
-    },
-    "C": {
-      "item": "minecraft:tnt"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:spectral_arrow",
+    "B": "minecraft:obsidian",
+    "C": "minecraft:tnt",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

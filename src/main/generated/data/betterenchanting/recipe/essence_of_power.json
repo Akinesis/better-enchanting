@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:crossbow"
-    },
-    "B": {
-      "item": "minecraft:diamond"
-    },
-    "C": {
-      "item": "minecraft:skeleton_skull"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:crossbow",
+    "B": "minecraft:diamond",
+    "C": "minecraft:skeleton_skull",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

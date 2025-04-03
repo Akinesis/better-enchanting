@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:feather"
-    },
-    "D": {
-      "item": "minecraft:end_stone"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "N": {
-      "item": "minecraft:phantom_membrane"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:feather",
+    "D": "minecraft:end_stone",
+    "I": "betterenchanting:infused_lapis",
+    "N": "minecraft:phantom_membrane",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

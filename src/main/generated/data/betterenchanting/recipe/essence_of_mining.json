@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:iron_block"
-    },
-    "D": {
-      "item": "minecraft:diamond_pickaxe"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "N": {
-      "item": "minecraft:flint"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:iron_block",
+    "D": "minecraft:diamond_pickaxe",
+    "I": "betterenchanting:infused_lapis",
+    "N": "minecraft:flint",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

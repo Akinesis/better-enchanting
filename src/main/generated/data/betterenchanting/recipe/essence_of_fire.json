@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:magma_block"
-    },
-    "B": {
-      "item": "minecraft:lava_bucket"
-    },
-    "C": {
-      "item": "minecraft:dragon_breath"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:magma_block",
+    "B": "minecraft:lava_bucket",
+    "C": "minecraft:dragon_breath",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

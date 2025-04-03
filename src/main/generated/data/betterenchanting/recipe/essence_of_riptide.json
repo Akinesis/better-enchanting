@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:water_bucket"
-    },
-    "B": {
-      "item": "minecraft:tnt"
-    },
-    "C": {
-      "item": "minecraft:nautilus_shell"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:water_bucket",
+    "B": "minecraft:tnt",
+    "C": "minecraft:nautilus_shell",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

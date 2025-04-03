@@ -44,7 +44,9 @@ public class ModEnchantmentHelper {
         if(enchantIsTreasure(enchantment, world))
             tempCost *= GlobalConfig.tresaureMultiplier;
 
-        int encahntability = stack.getItem().getEnchantability();
+        int encahntability = 0;
+        if(stack.getItem().getComponents().contains(DataComponentTypes.ENCHANTABLE))
+            encahntability = stack.getItem().getComponents().get(DataComponentTypes.ENCHANTABLE).value();// getEnchantability();
 
         tempCost = tempCost * (1-(encahntability/100));
 
@@ -63,7 +65,7 @@ public class ModEnchantmentHelper {
     }
 
     private static boolean enchantIsTreasure(Enchantment enchantment,World world){
-        Optional<RegistryEntryList.Named<Enchantment>> treasureList = world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).getEntryList(ModEnchantmentTags.BENEFICIAL_TREASURE);
+        Optional<RegistryEntryList.Named<Enchantment>> treasureList = world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getOptional(ModEnchantmentTags.BENEFICIAL_TREASURE);
         if(treasureList != null && !treasureList.isEmpty()){
             return  (treasureList.get().stream().filter(e -> {
                 return e.value() == enchantment;
@@ -116,8 +118,8 @@ public class ModEnchantmentHelper {
         if(itemToEnchant.isOf(Items.BOOK))
             return List.of();
 
-        Optional<RegistryEntryList.Named<Enchantment>> enchantingTableList = registryManager.get(RegistryKeys.ENCHANTMENT).getEntryList(EnchantmentTags.IN_ENCHANTING_TABLE);
-        Optional<RegistryEntryList.Named<Enchantment>> treasureList = registryManager.get(RegistryKeys.ENCHANTMENT).getEntryList(EnchantmentTags.TREASURE);
+        Optional<RegistryEntryList.Named<Enchantment>> enchantingTableList = registryManager.getOrThrow(RegistryKeys.ENCHANTMENT).getOptional(EnchantmentTags.IN_ENCHANTING_TABLE);
+        Optional<RegistryEntryList.Named<Enchantment>> treasureList = registryManager.getOrThrow(RegistryKeys.ENCHANTMENT).getOptional(EnchantmentTags.TREASURE);
 
         Stream <RegistryEntry<Enchantment>> concatEnchantList;
         List<EnchantmentLevelEntry> list = Lists.newArrayList();
@@ -199,7 +201,8 @@ public class ModEnchantmentHelper {
                     Horseshoes.IRON_HORSESHOES_ITEM,
                     Horseshoes.GOLD_HORSESHOES_ITEM));
 
-        return enchantableModdedItems.contains(itemStacks.getItem()) || itemStacks.getItem().isEnchantable(itemStacks);
+
+        return enchantableModdedItems.contains(itemStacks.getItem()) || EnchantmentHelper.canHaveEnchantments(itemStacks);
     }
 
     public static List<ItemStack> replaceEnchantedBook(@Nullable @Local LocalRef<ItemStack> localRef, ItemStack item){

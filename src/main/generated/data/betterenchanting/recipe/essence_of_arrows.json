@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:skeleton_skull"
-    },
-    "B": {
-      "item": "minecraft:emerald_block"
-    },
-    "C": {
-      "item": "minecraft:nether_star"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:skeleton_skull",
+    "B": "minecraft:emerald_block",
+    "C": "minecraft:nether_star",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

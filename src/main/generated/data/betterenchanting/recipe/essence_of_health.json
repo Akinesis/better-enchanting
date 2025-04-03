@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:obsidian"
-    },
-    "D": {
-      "item": "minecraft:golden_apple"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "N": {
-      "item": "minecraft:honey_block"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:obsidian",
+    "D": "minecraft:golden_apple",
+    "I": "betterenchanting:infused_lapis",
+    "N": "minecraft:honey_block",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

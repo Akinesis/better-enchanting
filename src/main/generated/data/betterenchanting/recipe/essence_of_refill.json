@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:ender_pearl"
-    },
-    "D": {
-      "item": "minecraft:ender_eye"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "N": {
-      "item": "minecraft:slime_block"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:ender_pearl",
+    "D": "minecraft:ender_eye",
+    "I": "betterenchanting:infused_lapis",
+    "N": "minecraft:slime_block",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

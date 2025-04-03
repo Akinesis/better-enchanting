@@ -21,10 +21,7 @@ import net.minecraft.item.Items;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.screen.PlayerScreenHandler;
-import net.minecraft.screen.Property;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerContext;
+import net.minecraft.screen.*;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -40,7 +37,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class CustomEnchantmentScreenHandler extends ScreenHandler {
-    static final Identifier EMPTY_LAPIS_SLOT_TEXTURE = Identifier.ofVanilla("item/empty_slot_lapis_lazuli");
+    static final Identifier EMPTY_LAPIS_SLOT_TEXTURE = Identifier.ofVanilla("container/slot/lapis_lazuli");
     private final Inventory inventory;
     private final ScreenHandlerContext context;
     public final int[] enchantmentPower;
@@ -76,14 +73,17 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
         });
 
         this.addSlot(new Slot(this.inventory, 1, 31, 91) {
+            @Override
             public boolean canInsert(ItemStack stack) {
                 return stack.isOf(Items.LAPIS_LAZULI);
             }
 
-            public Pair<Identifier, Identifier> getBackgroundSprite() {
-                return Pair.of(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE, CustomEnchantmentScreenHandler.EMPTY_LAPIS_SLOT_TEXTURE);
+            @Override
+            public Identifier getBackgroundSprite() {
+                return CustomEnchantmentScreenHandler.EMPTY_LAPIS_SLOT_TEXTURE;
             }
         });
+
         this.addSlot(new Slot(this.inventory, 2, 20, 111) { });
 
         int i;
@@ -114,7 +114,7 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
             ItemStack itemStack = inventory.getStack(0);
             if (!itemStack.isEmpty() && ModEnchantmentHelper.itemIsEnchantable(itemStack)) {
                 this.context.run((world, pos) -> {
-                    IndexedIterable<RegistryEntry<Enchantment>> indexedIterable = world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).getIndexedEntries();
+                    IndexedIterable<RegistryEntry<Enchantment>> indexedIterable = world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getIndexedEntries();
                     int i = 0;
                     Iterator var6 = EnchantingTableBlock.POWER_PROVIDER_OFFSETS.iterator();
 
@@ -167,7 +167,7 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
             ItemStack enchantMaterialStack = this.inventory.getStack(2);
 
 
-            Optional<RegistryEntry.Reference<Enchantment>> enchant =  player.getWorld().getRegistryManager().get(RegistryKeys.ENCHANTMENT).getEntry(this.enchantmentId[id]);
+            Optional<RegistryEntry.Reference<Enchantment>> enchant =  player.getWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getEntry(this.enchantmentId[id]);
 
             if(!enchant.isEmpty()){
                 Enchantment enchantment = enchant.get().value();
@@ -199,7 +199,7 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
                 }else{
                     //can enchant
                     this.context.run((world, pos) -> {
-                        RegistryEntry<Enchantment> enchantEntry = world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).getEntry(enchant.get().value());
+                        RegistryEntry<Enchantment> enchantEntry = world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getEntry(enchant.get().value());
 
                         //ItemStack itemToEnchantCopy = itemToEnchant;
                         if(!player.isInCreativeMode())
@@ -229,7 +229,7 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
                     return true;
                 }
             }
-            Util.error("Enchantment not found for ID : " + id);
+            Util.logErrorOrPause("Enchantment not found for ID : " + id);
             return false;
 
         }else if(enchantmentId[0] == -5){
@@ -258,7 +258,7 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
 
         }else {
             String var10000 = String.valueOf(player.getName());
-            Util.error(var10000 + " pressed invalid button id: " + id);
+            Util.logErrorOrPause(var10000 + " pressed invalid button id: " + id);
             return false;
         }
 

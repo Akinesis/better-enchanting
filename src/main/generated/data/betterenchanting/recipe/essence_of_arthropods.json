@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:cobweb"
-    },
-    "B": {
-      "item": "minecraft:deepslate"
-    },
-    "C": {
-      "item": "minecraft:chorus_fruit"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:cobweb",
+    "B": "minecraft:deepslate",
+    "C": "minecraft:chorus_fruit",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

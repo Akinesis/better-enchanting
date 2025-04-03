@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:diamond"
-  },
-  "base": {
-    "item": "minecraft:golden_boots"
-  },
+  "addition": "minecraft:diamond",
+  "base": "minecraft:golden_boots",
   "result": {
     "count": 1,
     "id": "minecraft:diamond_boots"
   },
-  "template": {
-    "item": "betterenchanting:diamond_upgrade_smithing_template"
-  }
+  "template": "betterenchanting:diamond_upgrade_smithing_template"
 }

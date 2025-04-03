@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:blue_ice"
-    },
-    "B": {
-      "item": "minecraft:snow_block"
-    },
-    "C": {
-      "item": "minecraft:echo_shard"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:blue_ice",
+    "B": "minecraft:snow_block",
+    "C": "minecraft:echo_shard",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

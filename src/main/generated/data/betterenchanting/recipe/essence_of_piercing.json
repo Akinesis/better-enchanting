@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:spectral_arrow"
-    },
-    "B": {
-      "item": "minecraft:end_rod"
-    },
-    "C": {
-      "item": "minecraft:trident"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:spectral_arrow",
+    "B": "minecraft:end_rod",
+    "C": "minecraft:trident",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

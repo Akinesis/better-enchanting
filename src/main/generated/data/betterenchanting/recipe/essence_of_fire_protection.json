@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "D": {
-      "item": "minecraft:dragon_breath"
-    },
-    "E": {
-      "item": "minecraft:end_stone"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "M": {
-      "item": "minecraft:magma_block"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "D": "minecraft:dragon_breath",
+    "E": "minecraft:end_stone",
+    "I": "betterenchanting:infused_lapis",
+    "M": "minecraft:magma_block",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

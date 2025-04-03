@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:iron_block"
-    },
-    "B": {
-      "item": "minecraft:obsidian"
-    },
-    "C": {
-      "item": "minecraft:lodestone"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:iron_block",
+    "B": "minecraft:obsidian",
+    "C": "minecraft:lodestone",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

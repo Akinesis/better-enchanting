@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:sugar"
-    },
-    "D": {
-      "item": "minecraft:diamond"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "N": {
-      "item": "minecraft:blaze_powder"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "C": "minecraft:sugar",
+    "D": "minecraft:diamond",
+    "I": "betterenchanting:infused_lapis",
+    "N": "minecraft:blaze_powder",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

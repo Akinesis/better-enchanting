@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:gold_block"
-    },
-    "B": {
-      "item": "minecraft:diamond"
-    },
-    "C": {
-      "item": "minecraft:beacon"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:gold_block",
+    "B": "minecraft:diamond",
+    "C": "minecraft:beacon",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

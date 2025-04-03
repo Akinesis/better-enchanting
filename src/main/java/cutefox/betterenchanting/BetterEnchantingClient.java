@@ -5,7 +5,6 @@ import java.util.*;
 import cutefox.betterenchanting.Util.EnchantingIngredientMapPayload;
 import cutefox.betterenchanting.datagen.ModEnchantIngredientMap;
 import cutefox.betterenchanting.registry.ModHandledScreens;
-import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 

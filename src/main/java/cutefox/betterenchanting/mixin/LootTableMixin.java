@@ -4,18 +4,10 @@ import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;
 import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.Util.ModEnchantmentHelper;
-import cutefox.betterenchanting.datagen.ModEnchantIngredientMap;
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import net.minecraft.component.type.ItemEnchantmentsComponent;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.loot.LootTable;
-import net.minecraft.loot.context.LootContextParameterSet;
-import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.loot.context.LootWorldContext;
 import net.minecraft.util.math.random.Random;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -35,7 +27,7 @@ public abstract class LootTableMixin {
     @Shadow protected abstract List<Integer> getFreeSlots(Inventory inventory, Random random);
 
     @Inject(method = "supplyInventory", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isEmpty()Z"))
-    public void betterEnchanting$replaceEnchantedBook(Inventory inventory, LootContextParameterSet parameters, long seed, CallbackInfo ci, @Local LocalRef<ItemStack> localRef){
+    public void betterEnchanting$replaceEnchantedBook(Inventory inventory, LootWorldContext parameters, long seed, CallbackInfo ci, @Local LocalRef<ItemStack> localRef){
 
         if(localRef.get().isEmpty())
             return;
@@ -46,7 +38,7 @@ public abstract class LootTableMixin {
     }
 
     @Inject(method = "supplyInventory", at = @At(value = "TAIL"),locals = LocalCapture.CAPTURE_FAILHARD)
-    public void betterEnchanting$addEssencesAfterLootGeneration(Inventory inventory, LootContextParameterSet parameters, long seed, CallbackInfo ci){
+    public void betterEnchanting$addEssencesAfterLootGeneration(Inventory inventory, LootWorldContext parameters, long seed, CallbackInfo ci){
 
         Random random = Random.create(53844);
 

@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:iron_ingot"
-  },
-  "base": {
-    "item": "minecraft:stone_hoe"
-  },
+  "addition": "minecraft:iron_ingot",
+  "base": "minecraft:stone_hoe",
   "result": {
     "count": 1,
     "id": "minecraft:iron_hoe"
   },
-  "template": {
-    "item": "betterenchanting:iron_upgrade_smithing_template"
-  }
+  "template": "betterenchanting:iron_upgrade_smithing_template"
 }

@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:glistering_melon_slice"
-    },
-    "B": {
-      "item": "minecraft:smooth_quartz"
-    },
-    "C": {
-      "item": "minecraft:end_crystal"
-    },
-    "I": {
-      "item": "betterenchanting:infused_lapis"
-    },
-    "S": {
-      "item": "betterenchanting:magic_shard_full"
-    }
+    "A": "minecraft:glistering_melon_slice",
+    "B": "minecraft:smooth_quartz",
+    "C": "minecraft:end_crystal",
+    "I": "betterenchanting:infused_lapis",
+    "S": "betterenchanting:magic_shard_full"
   },
   "pattern": [
     " I ",

@@ -154,7 +154,7 @@ public class ModEnchantIngredientMap {
 
         for (String key : stringMap.keySet()) {
             Identifier enchantId = Identifier.of(key);
-            enchantment = world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).get(enchantId);
+            enchantment = world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).get(enchantId);
 
             List<Item> ingredients = new ArrayList<>();
 
@@ -184,7 +184,7 @@ public class ModEnchantIngredientMap {
      * @return True if enchantment is found and successfully added to the map. False otherwise.
      */
     private static boolean addEnchantmentIngredient(Identifier enchantmentId, List<Item> ingredients){
-        Registry<Enchantment> enchantRegistry =  Utils.getRegistryManager().get(RegistryKeys.ENCHANTMENT);
+        Registry<Enchantment> enchantRegistry =  Utils.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT);
         Enchantment enchantment = enchantRegistry.get(enchantmentId);
 
         return addEnchantmentIngredient(enchantment, ingredients);

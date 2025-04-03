@@ -19,7 +19,7 @@ public class BetterEnchantingApi {
      * @return True if enchantment is found and successfully added to the map. False otherwise.
      */
     public static boolean addEnchantmentIngredient(Identifier enchantmentId, List<Item> ingredients){
-        Registry<Enchantment> enchantRegistry =  Utils.getRegistryManager().get(RegistryKeys.ENCHANTMENT);
+        Registry<Enchantment> enchantRegistry =  Utils.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT);
         Enchantment enchantment = enchantRegistry.get(enchantmentId);
 
         return addEnchantmentIngredient(enchantment, ingredients);
