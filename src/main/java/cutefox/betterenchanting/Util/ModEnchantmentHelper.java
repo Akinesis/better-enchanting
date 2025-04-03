@@ -254,16 +254,16 @@ public class ModEnchantmentHelper {
                 int newLevel = e.getIntValue();
                 int oldValue = output.getEnchantments().getLevel(e.getKey());
                 if(newLevel > oldValue){
-                    //output.getEnchantments().getEnchantmentEntries().remove(e.getKey());
                     output.addEnchantment(e.getKey(), e.getIntValue());
                 }else if(oldValue == newLevel){
                     int maxLevel = e.getKey().value().getMaxLevel();
-                    //output.getEnchantments().getEnchantmentEntries().remove(e.getKey());
                     output.addEnchantment(e.getKey(), Math.min(oldValue+1, maxLevel));
                 }
 
             }else{
-                output.addEnchantment(e.getKey(), e.getIntValue());
+
+                if(EnchantmentHelper.isCompatible(output.getEnchantments().getEnchantments(), e.getKey()))
+                    output.addEnchantment(e.getKey(), e.getIntValue());
             }
 
         }

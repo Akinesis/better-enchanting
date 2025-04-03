@@ -115,5 +115,9 @@
   "better-enchanting/betterEnchanting.midnightconfig.overidenItemCost":"Coûts en item (si coûts fixe)",
   "better-enchanting/betterEnchanting.midnightconfig.overidenItemCost.tooltip":"Si \"Coûts en objet fixe\" est VRAIS, tous les coûts en objet des enchantement serons cette valeure.",
   "better-enchanting/betterEnchanting.midnightconfig.catalystGivebackChance":"Chance de retour du Catalyseur",
-  "better-enchanting/betterEnchanting.midnightconfig.catalystGivebackChance.tooltip":"Chance de rendre un Catalyseur vide en en utilisant un à l'enclume."
+  "better-enchanting/betterEnchanting.midnightconfig.catalystGivebackChance.tooltip":"Chance de rendre un Catalyseur vide en en utilisant un à l'enclume.",
+  "better-enchanting/betterEnchanting.midnightconfig.catalystCombinationMultiplier":"Multiplicateur de fusion de Catalyseurs",
+  "better-enchanting/betterEnchanting.midnightconfig.catalystCombinationMultiplier.tooltip":"Le prix total est : Prix de forge combiné des deux catalyseurs multiplié par cette valeur.",
+  "better-enchanting/betterEnchanting.midnightconfig.magicShardGiveBackChance":"Chnace de retour d'un éclat magique",
+  "better-enchanting/betterEnchanting.midnightconfig.magicShardGiveBackChance.tooltip":"Pourcentage de chande de rendre un éclat ternis après avoir utilisé un éclat dans une rectte."
 }

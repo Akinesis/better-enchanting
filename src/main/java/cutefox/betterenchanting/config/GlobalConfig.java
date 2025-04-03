@@ -22,7 +22,9 @@ public class GlobalConfig extends MidnightConfig {
     @Entry(category = GLOBAL) public static double consecutiveEnchantIncrease = 0.05;
     @Entry(category = GLOBAL) public static int baseEnchantmentCost = 8;
     @Entry(category = GLOBAL) public static double tresaureMultiplier = 2;
-    @Entry(category = GLOBAL) public static int catalystGivebackChance = 10;
+    @Entry(category = GLOBAL, min=1, max=100) public static int catalystGivebackChance = 10;
+    @Entry(category = GLOBAL) public static float catalystCombinationMultiplier = 1.8f;
+    @Entry(category = GLOBAL, min=1, max=100) public static int magicShardGiveBackChance = 65;
 
     // removed ModMenuApi - obsolete, causes crashes on dedicated servers
 

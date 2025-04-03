@@ -115,5 +115,9 @@
   "better-enchanting/betterEnchanting.midnightconfig.overidenItemCost":"Cost of item (if overiden)",
   "better-enchanting/betterEnchanting.midnightconfig.overidenItemCost.tooltip":"If \"Should override item cost\" set to TRUE, all enchantment item cost will be this value.",
   "better-enchanting/betterEnchanting.midnightconfig.catalystGivebackChance":"Catalyst giveback chance",
-  "better-enchanting/betterEnchanting.midnightconfig.catalystGivebackChance.tooltip":"Chance upon using a catalyst at the anvil to give back a blank one."
+  "better-enchanting/betterEnchanting.midnightconfig.catalystGivebackChance.tooltip":"Chance upon using a catalyst at the anvil to give back a blank one.",
+  "better-enchanting/betterEnchanting.midnightconfig.catalystCombinationMultiplier":"Catalyst combination price multiplier",
+  "better-enchanting/betterEnchanting.midnightconfig.catalystCombinationMultiplier.tooltip":"Final price is : Combine enchantment price of both catalyst multiplied by this value.",
+  "better-enchanting/betterEnchanting.midnightconfig.magicShardGiveBackChance":"Magic shard giveback chance",
+  "better-enchanting/betterEnchanting.midnightconfig.magicShardGiveBackChance.tooltip":"Chance upon crafting an item with a full Magic Shard to give back a dull one."
 }

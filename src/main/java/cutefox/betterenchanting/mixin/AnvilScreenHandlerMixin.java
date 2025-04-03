@@ -73,7 +73,7 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandlerMixin{
                 output.setStack(0, ModEnchantmentHelper.combineCatalyst(firstStack, secondStack));
                 int finalCost = ModEnchantmentHelper.getCatalystEnchantmentCost(firstStack);
                 finalCost += ModEnchantmentHelper.getCatalystEnchantmentCost(secondStack);
-                finalCost = Math.round(finalCost*2.3f);
+                finalCost = Math.round(finalCost*GlobalConfig.catalystCombinationMultiplier);
                 levelCost.set(finalCost);
                 betterEnchanting$customCost = finalCost;
                 ci.cancel();
