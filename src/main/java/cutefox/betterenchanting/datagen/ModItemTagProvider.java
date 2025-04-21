@@ -185,5 +185,13 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.MINING_LOOT_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
+        getOrCreateTagBuilder(ModItemTags.IRON_UPGRADE_TEMPLATE)
+                .setReplace(false)
+                .add(ModItems.IRON_UPGRADE_SMITHING_TEMPLATE);
+
+        getOrCreateTagBuilder(ModItemTags.DIAMOND_UPGRADE_TEMPLATE)
+                .setReplace(false)
+                .add(ModItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE);
+
     }
 }
