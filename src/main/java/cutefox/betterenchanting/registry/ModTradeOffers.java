@@ -70,29 +70,23 @@ public class ModTradeOffers extends TradeOffers {
         public TradeOffer create(Entity entity, Random random) {
             int l;
             ItemStack itemStack;
-<<<<<<< HEAD
-            RegistryEntryList.Named<Item> ingredients = Registries.ITEM.getOrThrow (ModItemTags.ENCHANTEMNT_INGREDIENT);
-            RegistryEntryList.Named<Item> essences = Registries.ITEM.getOrThrow(ModItemTags.ENCHANTMENT_ESSENCE);
-            RegistryEntryList.Named<Item> librarian = Registries.ITEM.getOrThrow(ModItemTags.LIBRARIAN_RARE_INGREDIENT);
-=======
-            RegistryEntryList.Named<Item> ingredients = Registries.ITEM.getOrCreateEntryList(ModItemTags.ENCHANTEMNT_INGREDIENT);
+            RegistryEntryList.Named<Item> ingredients = Registries.ITEM.getOrThrow(ModItemTags.ENCHANTEMNT_INGREDIENT);
             //RegistryEntryList.Named<Item> essences = Registries.ITEM.getOrCreateEntryList(ModItemTags.ENCHANTMENT_ESSENCE);
-            RegistryEntryList.Named<Item> vanillaEssences = Registries.ITEM.getOrCreateEntryList(ModItemTags.VANILLA_ESSENCE);
+            RegistryEntryList.Named<Item> vanillaEssences = Registries.ITEM.getOrThrow(ModItemTags.VANILLA_ESSENCE);
             List<RegistryEntry<Item>> essences = vanillaEssences.stream().collect(Collectors.toList());
-            RegistryEntryList.Named<Item> librarian = Registries.ITEM.getOrCreateEntryList(ModItemTags.LIBRARIAN_RARE_INGREDIENT);
->>>>>>> f3e215b (Add Enderscape compatibility & fixed Horseshoes)
+            RegistryEntryList.Named<Item> librarian = Registries.ITEM.getOrThrow(ModItemTags.LIBRARIAN_RARE_INGREDIENT);
 
             if(BetterEnchanting.NEO_ENCHANT_PRESENT)
-                essences.addAll(Registries.ITEM.getOrCreateEntryList(ModItemTags.NEOENCHANT_ESSENCE).stream().toList());
+                essences.addAll(Registries.ITEM.getOrThrow(ModItemTags.NEOENCHANT_ESSENCE).stream().toList());
 
             if(BetterEnchanting.BUMBLEZONE_PRESENT)
-                essences.addAll(Registries.ITEM.getOrCreateEntryList(ModItemTags.BUMBLEZONE_ESSENCE).stream().toList());
+                essences.addAll(Registries.ITEM.getOrThrow(ModItemTags.BUMBLEZONE_ESSENCE).stream().toList());
 
             if(BetterEnchanting.SPELL_POWER_PRESENT)
-                essences.addAll(Registries.ITEM.getOrCreateEntryList(ModItemTags.SPELL_POWER_ESSENCE).stream().toList());
+                essences.addAll(Registries.ITEM.getOrThrow(ModItemTags.SPELL_POWER_ESSENCE).stream().toList());
 
             if(BetterEnchanting.DUNGEONS_AND_TAVERNS_PRESENT)
-                essences.addAll(Registries.ITEM.getOrCreateEntryList(ModItemTags.NOVA_ESSENCE).stream().toList());
+                essences.addAll(Registries.ITEM.getOrThrow(ModItemTags.NOVA_ESSENCE).stream().toList());
 
             int price;
 

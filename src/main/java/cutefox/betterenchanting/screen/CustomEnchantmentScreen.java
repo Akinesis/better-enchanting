@@ -446,7 +446,8 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
                                     list.add(mutableText2.formatted(client.player.experienceLevel >= enchantLevelCost ? Formatting.GRAY : Formatting.RED));
 
                                     MutableText mutableText3;
-                                    mutableText3 = Text.translatable("container.betterenchanting.enchant.material.one", enchantIngredientCost, Text.translatable(enchantIngredientStack.toString()));
+                                    String itemStackString = enchantIngredientStack.toString();
+                                    mutableText3 = Text.translatable("container.betterenchanting.enchant.material.one", enchantIngredientCost, enchantIngredientStack.getName());
 
                                     if(handler.getSlot(2).getStack().getItem() != enchantIngredient)
                                         list.add(mutableText3.formatted(Formatting.RED));
