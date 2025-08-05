@@ -59,9 +59,13 @@ dependencies {
 	//Incantatonionem
 	modCompileOnly "maven.modrinth:incantationem:ivGrgU5k"
 
-	//Horseshoes
 
+	//Horseshoes
 	modCompileOnly "maven.modrinth:tyg1IZwj:${project.horseshoes_version_id}"
+
+	//Enderscape
+	modCompileOnly "maven.modrinth:btCrWvHr:${project.enderscape_version_id}"
+
 	//The Bumblezone
 	modCompileOnly "maven.modrinth:eA8SXqWL:${project.bublezone_version_id}"
 	modCompileOnly "com.teamresourceful.resourcefullib:resourcefullib-fabric-1.21:3.0.11"

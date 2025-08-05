@@ -9,7 +9,8 @@ import cutefox.betterenchanting.datagen.ModEnchantIngredientMap;
 import cutefox.betterenchanting.registry.ModEnchantmentTags;
 import cutefox.betterenchanting.registry.ModItems;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import net.hyper_pigeon.horseshoes.Horseshoes;
+import net.bunten.enderscape.registry.EnderscapeItems;
+import net.hyper_pigeon.horseshoes.register.ItemRegistry;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.enchantment.Enchantment;
@@ -194,13 +195,20 @@ public class ModEnchantmentHelper {
 
     public static boolean itemIsEnchantable(ItemStack itemStacks){
 
+        //ADD COMPATIBILITY ITEMS HERE
+
         List<Item> enchantableModdedItems = new ArrayList<>();
 
         if(BetterEnchanting.HORSESHOES_PRESENT)
             enchantableModdedItems.addAll(List.of(
-                    Horseshoes.DIAMOND_HORSESHOES_ITEM,
-                    Horseshoes.IRON_HORSESHOES_ITEM,
-                    Horseshoes.GOLD_HORSESHOES_ITEM));
+                    ItemRegistry.DIAMOND_HORSESHOES_ITEM.get().asItem(),
+                    ItemRegistry.IRON_HORSESHOES_ITEM.get().asItem(),
+                    ItemRegistry.GOLD_HORSESHOES_ITEM.get().asItem()));
+
+        if(BetterEnchanting.ENDERSCAPE_PRESENT)
+            enchantableModdedItems.addAll(List.of(
+                    EnderscapeItems.MIRROR,
+                    EnderscapeItems.MAGNIA_ATTRACTOR));
 
 
         return enchantableModdedItems.contains(itemStacks.getItem()) || EnchantmentHelper.canHaveEnchantments(itemStacks);

@@ -21,6 +21,12 @@ public class ModItemTags {
     public static final TagKey<Item> IRON_UPGRADE_TEMPLATE = TagKey.of(RegistryKeys.ITEM, Identifier.of("fox_den","iron_upgrade_template"));
     public static final TagKey<Item> DIAMOND_UPGRADE_TEMPLATE = TagKey.of(RegistryKeys.ITEM, Identifier.of("fox_den","diamond_upgrade_template"));
 
+    public static final TagKey<Item> IRON_UPGRADE_TEMPLATE = TagKey.of(RegistryKeys.ITEM, Identifier.of("fox_den","iron_upgrade_template"));
+    public static final TagKey<Item> DIAMOND_UPGRADE_TEMPLATE = TagKey.of(RegistryKeys.ITEM, Identifier.of("fox_den","diamond_upgrade_template"));
+
+    public static final TagKey<Item> IRON_UPGRADE_TEMPLATE = TagKey.of(RegistryKeys.ITEM, Identifier.of("fox_den","iron_upgrade_template"));
+    public static final TagKey<Item> DIAMOND_UPGRADE_TEMPLATE = TagKey.of(RegistryKeys.ITEM, Identifier.of("fox_den","diamond_upgrade_template"));
+
     public static void registerModTags(){
         BetterEnchanting.LOGGER.info("Generating item tags for mod : "+BetterEnchanting.MOD_ID);
     }

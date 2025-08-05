@@ -34,6 +34,7 @@ public class BetterEnchanting implements ModInitializer {
 	public static boolean REPLANTMENT_PRESENT = false;
 	public static boolean DUNGEONS_AND_TAVERNS_PRESENT = false;
 	public static boolean HORSESHOES_PRESENT = false;
+	public static boolean ENDERSCAPE_PRESENT = false;
 	public static boolean DIVERSITY_PRESENT = false;
 	public static boolean TOSS_UP_PRESENT = false;
 	public static boolean SPELL_POWER_PRESENT = false;
@@ -163,6 +164,12 @@ public class BetterEnchanting implements ModInitializer {
 			LOGGER.info("Mod Combat Roll is present and loaded; Building compat for "+BetterEnchanting.MOD_ID);
 			COMBAT_ROLL_PRESENT = true;
 			ModEnchantIngredientMap.loadCombatRollConfig();
+		}
+
+		if(FabricLoader.getInstance().isModLoaded("enderscape")){
+			LOGGER.info("Mod Enderscape is present and loaded; Building compat for "+BetterEnchanting.MOD_ID);
+			ENDERSCAPE_PRESENT = true;
+			//ModEnchantIngredientMap.loadCombatRollConfig();
 		}
 	}
 }

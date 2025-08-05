@@ -11,6 +11,7 @@ import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.registry.ModItems;
 import io.netty.buffer.ByteBuf;
+import net.bunten.enderscape.registry.EnderscapeItems;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
@@ -359,4 +360,11 @@ public class ModEnchantIngredientMap {
         defaultMap.put("combat_roll:longfooted",listOfIdentifiers(List.of(Items.IRON_BOOTS,Items.LIGHTNING_ROD,Items.END_ROD,ModItems.ESSENCE_OF_LONGFOOT)));
         defaultMap.put("combat_roll:acrobat",listOfIdentifiers(List.of(Items.SUGAR,Items.REDSTONE,Items.DIAMOND_LEGGINGS,Items.CROSSBOW,ModItems.ESSENCE_OF_AGILITY)));
     }
+
+    public static void loadEnderscapeConfig(){
+        defaultMap.put("enderscape:bundling", listOfIdentifiers(List.of(ModItems.ESSENCE_OF_CAPACITY)));
+        defaultMap.put("enderscape:lightspeed", listOfIdentifiers(List.of(Items.ENDER_PEARL, EnderscapeItems.NEBULITE,ModItems.ESSENCE_OF_ENERGY)));
+        defaultMap.put("enderscape:transdimensional", listOfIdentifiers(List.of(ModItems.ESSENCE_OF_BUILDING)));
+    }
+
 }
