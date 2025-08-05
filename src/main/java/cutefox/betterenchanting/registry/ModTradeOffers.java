@@ -1,6 +1,7 @@
 package cutefox.betterenchanting.registry;
 
 import com.google.common.collect.ImmutableMap;
+import cutefox.betterenchanting.BetterEnchanting;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.block.Blocks;
@@ -9,13 +10,16 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.village.*;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -67,8 +71,22 @@ public class ModTradeOffers extends TradeOffers {
             int l;
             ItemStack itemStack;
             RegistryEntryList.Named<Item> ingredients = Registries.ITEM.getOrCreateEntryList(ModItemTags.ENCHANTEMNT_INGREDIENT);
-            RegistryEntryList.Named<Item> essences = Registries.ITEM.getOrCreateEntryList(ModItemTags.ENCHANTMENT_ESSENCE);
+            //RegistryEntryList.Named<Item> essences = Registries.ITEM.getOrCreateEntryList(ModItemTags.ENCHANTMENT_ESSENCE);
+            RegistryEntryList.Named<Item> vanillaEssences = Registries.ITEM.getOrCreateEntryList(ModItemTags.VANILLA_ESSENCE);
+            List<RegistryEntry<Item>> essences = vanillaEssences.stream().collect(Collectors.toList());
             RegistryEntryList.Named<Item> librarian = Registries.ITEM.getOrCreateEntryList(ModItemTags.LIBRARIAN_RARE_INGREDIENT);
+
+            if(BetterEnchanting.NEO_ENCHANT_PRESENT)
+                essences.addAll(Registries.ITEM.getOrCreateEntryList(ModItemTags.NEOENCHANT_ESSENCE).stream().toList());
+
+            if(BetterEnchanting.BUMBLEZONE_PRESENT)
+                essences.addAll(Registries.ITEM.getOrCreateEntryList(ModItemTags.BUMBLEZONE_ESSENCE).stream().toList());
+
+            if(BetterEnchanting.SPELL_POWER_PRESENT)
+                essences.addAll(Registries.ITEM.getOrCreateEntryList(ModItemTags.SPELL_POWER_ESSENCE).stream().toList());
+
+            if(BetterEnchanting.DUNGEONS_AND_TAVERNS_PRESENT)
+                essences.addAll(Registries.ITEM.getOrCreateEntryList(ModItemTags.NOVA_ESSENCE).stream().toList());
 
             int price;
 
