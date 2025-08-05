@@ -43,7 +43,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.MAGIC_SHARD_DULL)
                 .add(ModItems.INFUSED_LAPIS);
 
-        getOrCreateTagBuilder(ModItemTags.ENCHANTMENT_ESSENCE)
+        getOrCreateTagBuilder(ModItemTags.VANILLA_ESSENCE)
                 .add(ModItems.ESSENCE_OF_EXPERIENCE)
                 .add(ModItems.ESSENCE_OF_ARROWS)
                 .add(ModItems.ESSENCE_OF_FEATHER)
@@ -80,32 +80,14 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.ESSENCE_OF_QUICK_CHARGE)
                 .add(ModItems.ESSENCE_OF_DENSITY)
                 .add(ModItems.ESSENCE_OF_WIND)
-                .add(ModItems.ESSENCE_OF_BREACH)
-                .add(ModItems.ESSENCE_OF_POISON)
-                .add(ModItems.ESSENCE_OF_POISON_PROTECTION)
-                .add(ModItems.ESSENCE_OF_MINING)
-                .add(ModItems.ESSENCE_OF_SMELTING)
-                .add(ModItems.ESSENCE_OF_SIGHT)
-                .add(ModItems.ESSENCE_OF_LEVITATION)
-                .add(ModItems.ESSENCE_OF_FORAGING)
-                .add(ModItems.ESSENCE_OF_STRIKE)
-                .add(ModItems.ESSENCE_OF_HEALTH)
-                .add(ModItems.ESSENCE_OF_VAMPIRISM)
-                .add(ModItems.ESSENCE_OF_AGILITY)
-                .add(ModItems.ESSENCE_OF_COMBAT)
-                .add(ModItems.ESSENCE_OF_BUILDING)
-                .add(ModItems.ESSENCE_OF_FEAR)
-                .add(ModItems.ESSENCE_OF_REACH)
-                .add(ModItems.ESSENCE_OF_PULLING)
-                .add(ModItems.ESSENCE_OF_FOOD)
-                .add(ModItems.ESSENCE_OF_PHOTOSYNTHESIS)
-                .add(ModItems.ESSENCE_OF_GRAVITY)
-                .add(ModItems.ESSENCE_OF_WINGS)
-                .add(ModItems.ESSENCE_OF_NEUROTOXIN)
-                .add(ModItems.ESSENCE_OF_COMB_CUTTER)
-                .add(ModItems.ESSENCE_OF_EXPLOSION)
-                .add(ModItems.ESSENCE_OF_MULTI_ROLL)
-                .add(ModItems.ESSENCE_OF_LONGFOOT);
+                .add(ModItems.ESSENCE_OF_BREACH);
+
+        getOrCreateTagBuilder(ModItemTags.ENCHANTMENT_ESSENCE)
+                .addTag(ModItemTags.VANILLA_ESSENCE)
+                .addTag(ModItemTags.BUMBLEZONE_ESSENCE)
+                .addTag(ModItemTags.NEOENCHANT_ESSENCE)
+                .addTag(ModItemTags.NOVA_ESSENCE)
+                .addTag(ModItemTags.SPELL_POWER_ESSENCE);
 
         getOrCreateTagBuilder(ModItemTags.NEOENCHANT_ESSENCE)
                 .add(ModItems.ESSENCE_OF_POISON)
@@ -142,6 +124,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.ESSENCE_OF_SPELL_POWER)
                 .add(ModItems.ESSENCE_OF_SPELL_INFINITY)
                 .add(ModItems.ESSENCE_OF_SUNFIRE);
+
+        getOrCreateTagBuilder(ModItemTags.NOVA_ESSENCE)
+                .add(ModItems.ESSENCE_OF_PHOTOSYNTHESIS)
+                .add(ModItems.ESSENCE_OF_GRAVITY)
+                .add(ModItems.ESSENCE_OF_WINGS);
 
         getOrCreateTagBuilder(ItemTags.ARMOR_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);

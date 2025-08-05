@@ -134,13 +134,14 @@ public class ModEnchantmentHelper {
 
         List<RegistryKey<Enchantment>> swordEnchants = new ArrayList<>();
 
+
         swordEnchants.add(Enchantments.FIRE_ASPECT);
         swordEnchants.add(Enchantments.LOOTING);
         swordEnchants.add(Enchantments.KNOCKBACK);
         //TODO: ADD MODDED SWORD ENCHANTS
         //swordEnchants.add(RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of("mod_identifier:moded_enchant")));
 
-        concatEnchantList
+        concatEnchantList.distinct()
                 .filter(enchant -> {
                         boolean validEnchant;
                         if(enchant.isIn(EnchantmentTags.CURSE))
@@ -244,6 +245,40 @@ public class ModEnchantmentHelper {
         }
 
         return returnList;
+    }
+
+    public static ItemStack replaceEnchantedBook(ItemStack enchantedBook){
+
+        ItemEnchantmentsComponent bookEnchants = EnchantmentHelper.getEnchantments(enchantedBook);
+        List<ItemStack> returnList = new ArrayList<>();
+        ItemStack newItem;
+
+        int i =0;
+
+        for(Object2IntMap.Entry<RegistryEntry<Enchantment>> ench : bookEnchants.getEnchantmentEntries()){
+            bookEnchants.getEnchantmentEntries();
+            int enchantLevel = ench.getIntValue();
+            Enchantment enchantment = ench.getKey().value();
+            List<Item> ingredientsOfEnchant = ModEnchantIngredientMap.getIngredientsOfEnchantment(enchantment);
+            if(ingredientsOfEnchant !=null && !ingredientsOfEnchant.isEmpty()){
+                if(enchantLevel > ingredientsOfEnchant.size()) //If not all ingredients are configured for the enchant
+                    enchantLevel = ingredientsOfEnchant.size();
+
+                newItem = new ItemStack(ingredientsOfEnchant.get(enchantLevel-1));
+                if(enchantLevel < ingredientsOfEnchant.size()){
+                    //If the ingredient is not an essence
+                    net.minecraft.util.math.random.Random rand = Random.create();
+                    newItem.setCount(enchantLevel+rand.nextBetween(1,3));
+                }
+            }else {
+                newItem = new ItemStack(Items.EXPERIENCE_BOTTLE);
+            }
+            returnList.add(newItem);
+            i++;
+        }
+
+        Random rand = Random.create();
+        return returnList.get(rand.nextBetween(0, returnList.size()-1));
     }
 
     public static ItemStack combineCatalyst(ItemStack firstCatalyst, ItemStack secondCatalyst){

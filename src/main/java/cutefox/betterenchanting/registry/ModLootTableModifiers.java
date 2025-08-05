@@ -27,7 +27,7 @@ public class ModLootTableModifiers {
             if(source.isBuiltin() && LootTables.FISHING_TREASURE_GAMEPLAY == key){
 
                 builder.modifyPools( p -> {
-                    p.with(LootTableEntry.builder(ModLootTables.ESSENCE_TABLE));
+                    //p.with(LootTableEntry.builder(ModLootTables.ESSENCE_TABLE));
                 });
             }
         });
