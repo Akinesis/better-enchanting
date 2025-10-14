@@ -1,6 +1,9 @@
 package cutefox.betterenchanting;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import cutefox.betterenchanting.Util.EnchantingIngredientMapPayload;
+import cutefox.betterenchanting.Util.IngredientData;
 import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.conditions.ModConfigConditions;
 import cutefox.betterenchanting.config.GlobalConfig;
@@ -13,16 +16,28 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.resource.Resource;
+import net.minecraft.resource.ResourceManager;
+import net.minecraft.resource.ResourceType;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 
 public class BetterEnchanting implements ModInitializer {
@@ -55,6 +70,31 @@ public class BetterEnchanting implements ModInitializer {
 		ModTradeOffers.removeEnchantedBooks();
 		ModItemTags.registerModTags();
 		ModLootTables.registerLootTables();
+
+		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new SimpleSynchronousResourceReloadListener() {
+			@Override
+			public Identifier getFabricId() {
+				return Utils.id("enchanting");
+			}
+
+			@Override
+			public void reload(ResourceManager manager) {
+				// Clear Caches Here
+				Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+				for(Identifier id : manager.findResources("enchanting", path -> path.toString().endsWith(".json")).keySet()) {
+					try(InputStream stream = manager.getResource(id).get().getInputStream()) {
+						Reader reader = new InputStreamReader(stream);
+						IngredientData data = gson.fromJson(reader, IngredientData.class);
+						LOGGER.info(data.getEnchantment_id().toString());
+						LOGGER.info("Count : " + data.getIngredients().get(0).getCount());
+						// Consume the stream however you want, medium, rare, or well done.
+					} catch(Exception e) {
+						LOGGER.error("Error occurred while loading resource json " + id.toString(), e);
+					}
+				}
+			}
+		});
 
 		//Registry.register(Registries.ITEM_GROUP, Utils.id("item_group"), ITEM_GROUP);
 		Registry.register(Registries.ITEM_GROUP, Utils.id("item_group"), generateItemGroup());

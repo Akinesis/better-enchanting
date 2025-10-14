@@ -51,7 +51,7 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandlerMixin{
                     return;
                 }
 
-                ItemStack outputStack = new ItemStack(firstStack.getItem());
+                ItemStack outputStack = firstStack.copy();
 
                 for(Object2IntMap.Entry<RegistryEntry<Enchantment>> e : secondStack.getEnchantments().getEnchantmentEntries()){
                     if(outputStack.canBeEnchantedWith(e.getKey(), EnchantingContext.ACCEPTABLE))
@@ -63,7 +63,7 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandlerMixin{
                 ci.cancel();
 
             }else if(secondStack.getItem().equals(ModItems.ENCHANTMENT_CATALYST) && firstStack.getItem().equals(ModItems.ENCHANTMENT_CATALYST)){
-                ItemStack outputStack = new ItemStack(firstStack.getItem());
+                ItemStack outputStack = firstStack.copy();
                 outputStack.set(DataComponentTypes.MAX_STACK_SIZE,1);
 
                 //EnchantmentHelper.getEnchantments(firstStack).getEnchantmentEntries().stream().forEach(e -> outputStack.addEnchantment(e.getKey(), e.getIntValue()));

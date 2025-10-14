@@ -1,0 +1,10 @@
+{
+  "enchantment": "minecraft:mending",
+  "ingredients": [
+    {
+      "level": 0,
+      "ingredient": "minecraft:cobblestone",
+      "count": 64
+    }
+  ]
+}
