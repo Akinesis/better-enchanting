@@ -1,11 +1,13 @@
 package cutefox.betterenchanting.screen;
 
 import com.google.common.collect.Lists;
+import com.mojang.blaze3d.pipeline.RenderPipeline;
 import com.mojang.blaze3d.systems.RenderSystem;
 import cutefox.betterenchanting.Util.ModEnchantmentHelper;
 import cutefox.betterenchanting.Util.Utils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.DiffuseLighting;
@@ -156,7 +158,7 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
             if(this.client.player.experienceLevel < CustomEnchantmentScreenHandler.SHARD_FILLING_EXPERIENCE_COST)
                 q = Colors.RED;
 
-            context.drawGuiTexture(RenderLayer::getGuiTextured,MAGIC_SHARD_FULL, 72,14,16,16);
+            context.drawGuiTexture(RenderPipelines.GUI,MAGIC_SHARD_FULL, 72,14,16,16);
 
             if(!playerInCreative)
                 context.drawTextWithShadow(this.textRenderer, ""+CustomEnchantmentScreenHandler.SHARD_FILLING_EXPERIENCE_COST, 18+72 - this.textRenderer.getWidth(""+CustomEnchantmentScreenHandler.SHARD_FILLING_EXPERIENCE_COST), 14+8, q);
@@ -201,7 +203,7 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
                             frameBook = true;
                         }*/
                         boolean frameBook = (r >= 0 && s >= 0 && r < 15 && s < 15 && !hasEnchantLevel);
-                        RenderSystem.enableBlend();
+                        //RenderSystem.enableBlend();
 
                         if(this.client.player.experienceLevel < enchantLevelReq && !hasEnchantLevel && !playerInCreative){
                             bookToDraw = ENCHANTMENT_BOOK_DISABLED;
@@ -223,25 +225,26 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
                         //context.drawGuiTexture(bookToDraw, localWidth+72+(16*l)+(4*l), localHeight+14+(16*(k-indexStartOffset)), 16, 16);
 
                         if(bookToDraw == ENCHANTMENT_BOOK_DISABLED)
-                            context.drawGuiTexture(RenderLayer::getGuiTextured,ENCHANTMENT_BOOK_DISABLED, 72+(16*l)+(4*l), 14+(16*(k-indexStartOffset)), 16, 16);
+                            context.drawGuiTexture(RenderPipelines.GUI_TEXTURED,ENCHANTMENT_BOOK_DISABLED, 72+(16*l)+(4*l), 14+(16*(k-indexStartOffset)), 16, 16);
                         else
-                            context.drawItem(enchantedBook, 72+(16*l)+(4*l), 14+(16*(k-indexStartOffset)),1,-150);
+                            context.drawItem(enchantedBook, 72+(16*l)+(4*l), 14+(16*(k-indexStartOffset)));
+
 
                         if (frameBook)
-                            context.drawGuiTexture(RenderLayer::getGuiTexturedOverlay,BOOK_SLOT_SELECTOR, 72+(16*l)+(4*l), 14+(16*(k-indexStartOffset)), 16, 16);
+                            context.drawGuiTexture(RenderPipelines.GUI_TEXTURED,BOOK_SLOT_SELECTOR, 72+(16*l)+(4*l), 14+(16*(k-indexStartOffset)), 16, 16);
 
                         if(hasEnchantLevel){
-                            context.drawGuiTexture(RenderLayer::getGuiTexturedOverlay,CHECKMARK, 72+(16*l)+(4*l), 14+(16*(k-indexStartOffset)), 10, 10);
+                            context.drawGuiTexture(RenderPipelines.GUI_TEXTURED,CHECKMARK, 72+(16*l)+(4*l), 14+(16*(k-indexStartOffset)), 10, 10);
                         }
 
 
-                        RenderSystem.disableBlend();
+                        //RenderSystem.disableBlend();
 
-                        context.getMatrices().push();
-                        context.getMatrices().translate(0,0,350);
+                        //context.getMatrices().push();
+                        //context.getMatrices().translate(0,0,350);
                         if(!this.client.player.isInCreativeMode() && bookToDraw != ENCHANTMENT_BOOK_DISABLED && !hasEnchantLevel)
                             context.drawTextWithShadow(this.textRenderer, ""+enchantLevelCost, 18+72+(16*l)+(4*l) - this.textRenderer.getWidth(""+enchantLevelCost), 14+8+(16*(k-indexStartOffset)), q);
-                        context.getMatrices().pop();
+                        //context.getMatrices().pop();
 
                     }
                 }
@@ -253,8 +256,8 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
     protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
         int localWidth = (this.width - this.backgroundWidth) / 2;
         int localHeight = (this.height - this.backgroundHeight) / 2;
-        context.drawTexture(RenderLayer::getGuiTextured,ENCHANTING_TABLE_BACKGROUND, localWidth, localHeight, 0f, 0f, this.backgroundWidth, this.backgroundHeight,256,256);
-        this.drawBook(context, localWidth-3 , localHeight+24, delta);
+        context.drawTexture(RenderPipelines.GUI_TEXTURED,ENCHANTING_TABLE_BACKGROUND, localWidth, localHeight, 0f, 0f, this.backgroundWidth, this.backgroundHeight,256,256);
+        this.drawBook(context, localWidth-3 , localHeight+24);
         boolean playerInCreative = client.player.isInCreativeMode();
         int q = 8453920;
 
@@ -264,7 +267,7 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
             indexStartOffset = 0;
 
         if(this.handler.enchantmentId[0] == -5){
-            context.drawTexture(RenderLayer::getGuiTextured,ENCHANTING_TABLE_BACKGROUND, localWidth+63, localHeight+14, 182, 32, 16,16,256,256);
+            context.drawTexture(RenderPipelines.GUI_TEXTURED,ENCHANTING_TABLE_BACKGROUND, localWidth+63, localHeight+14, 182, 32, 16,16,256,256);
 
             return;
         }
@@ -286,12 +289,12 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
 
                 //Draw tree first row
                 if(k == 0){
-                    context.drawTexture(RenderLayer::getGuiTextured,ENCHANTING_TABLE_BACKGROUND, localWidth+63, localHeight+14, 182, 0, 16,16,256,256);
+                    context.drawTexture(RenderPipelines.GUI_TEXTURED,ENCHANTING_TABLE_BACKGROUND, localWidth+63, localHeight+14, 182, 0, 16,16,256,256);
                 }else if(k ==14 || this.handler.enchantmentId[k+1]<=-1){
-                    context.drawTexture(RenderLayer::getGuiTextured,ENCHANTING_TABLE_BACKGROUND, localWidth+63, localHeight+14+(16*(k-indexStartOffset)), 182, 32, 16,16,256,256);
+                    context.drawTexture(RenderPipelines.GUI_TEXTURED,ENCHANTING_TABLE_BACKGROUND, localWidth+63, localHeight+14+(16*(k-indexStartOffset)), 182, 32, 16,16,256,256);
                 }else {
                     boolean lastEntry = numberOfPossibleEnchants >=7;
-                    context.drawTexture(RenderLayer::getGuiTextured,ENCHANTING_TABLE_BACKGROUND, localWidth+63, localHeight+14+(16*(k-indexStartOffset)), 182, 16, lastEntry?13:16,16,256,256);
+                    context.drawTexture(RenderPipelines.GUI_TEXTURED,ENCHANTING_TABLE_BACKGROUND, localWidth+63, localHeight+14+(16*(k-indexStartOffset)), 182, 16, lastEntry?13:16,16,256,256);
                 }
 
                 //Draw books and connexions
@@ -299,13 +302,13 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
 
                     if (enchant != null && !enchant.isEmpty()) {
 
-                        RenderSystem.enableBlend();
+                        //RenderSystem.enableBlend();
 
 
-                        context.drawTexture(RenderLayer::getGuiTextured,ENCHANTING_TABLE_BACKGROUND, localWidth+68+(16*l)+(4*l), localHeight+14+(16*(k-indexStartOffset)), 198, 0, 4,16,256,256);
+                        context.drawTexture(RenderPipelines.GUI_TEXTURED,ENCHANTING_TABLE_BACKGROUND, localWidth+68+(16*l)+(4*l), localHeight+14+(16*(k-indexStartOffset)), 198, 0, 4,16,256,256);
 
 
-                        RenderSystem.disableBlend();
+                        //RenderSystem.disableBlend();
                     }
                 }
             }
@@ -313,7 +316,7 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
 
     }
 
-    private void drawBook(DrawContext context, int x, int y, float delta) {
+    /*private void drawBook(DrawContext context, int x, int y, float delta) {
         float f = MathHelper.lerp(delta, this.pageTurningSpeed, this.nextPageTurningSpeed);
         float g = MathHelper.lerp(delta, this.pageAngle, this.nextPageAngle);
         context.draw();
@@ -337,6 +340,17 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
         context.draw();
         context.getMatrices().pop();
         DiffuseLighting.enableGuiDepthLighting();
+    }*/
+
+    private void drawBook(DrawContext context, int x, int y) {
+        float f = this.client.getRenderTickCounter().getTickProgress(false);
+        float g = MathHelper.lerp(f, this.pageTurningSpeed, this.nextPageTurningSpeed);
+        float h = MathHelper.lerp(f, this.pageAngle, this.nextPageAngle);
+        int i = x + 14;
+        int j = y + 14;
+        int k = i + 38;
+        int l = j + 31;
+        context.addBookModel(this.BOOK_MODEL, BOOK_TEXTURE, 40.0F, g, h, i, j, k, l);
     }
 
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
@@ -510,9 +524,9 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
             if (this.indexStartOffset == i - 1) {
                 m = 86;
             }
-            context.drawGuiTexture(RenderLayer::getGuiTextured,SCROLLER, x + 56, y + 13 + m, 0, 6, 27);
+            context.drawGuiTexture(RenderPipelines.GUI_TEXTURED,SCROLLER, x + 56, y + 13 + m, 0, 6, 27);
         } else {
-            context.drawGuiTexture(RenderLayer::getGuiTextured,SCROLLER_DISABLED, x + 56, y + 13, 0, 6, 27);
+            context.drawGuiTexture(RenderPipelines.GUI_TEXTURED,SCROLLER_DISABLED, x + 56, y + 13, 0, 6, 27);
         }
     }
 

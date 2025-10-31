@@ -49,7 +49,7 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandlerMixin{
 
         instance.slots.clear();
         instance.trackedStacks.clear();
-        instance.previousTrackedStacks.clear();
+        //instance.previousTrackedStacks.clear();
 
         instance.addSlot(new Slot( input, 0, 49, 19) {
             public boolean canInsert(ItemStack stack) {

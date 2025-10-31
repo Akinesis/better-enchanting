@@ -59,7 +59,6 @@ dependencies {
 	//Incantatonionem
 	modCompileOnly "maven.modrinth:incantationem:ivGrgU5k"
 
-
 	//Horseshoes
 	modCompileOnly "maven.modrinth:tyg1IZwj:${project.horseshoes_version_id}"
 
@@ -79,7 +78,7 @@ dependencies {
 	//Spell power
 	modCompileOnly("maven.modrinth:8ooWzSQP:Yr88WIqG")
 	//Cloth config
-	modCompileOnly("maven.modrinth:9s6osm5g:HpMb5wGb")
+	modCompileOnly("maven.modrinth:9s6osm5g:cz0b1j8R")
 	//player animator
 	modCompileOnly("maven.modrinth:gedNE4y2:c6DQKGQp")
 	//trinkets

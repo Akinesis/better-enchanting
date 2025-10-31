@@ -36,7 +36,7 @@ public class ModTradeOffers extends TradeOffers {
 	                    4, new Factory[]{new BuyItemFactory(Items.WRITABLE_BOOK, 2, 12, 30), new EnchantmentIngredientsFactory(15, 4), new SellItemFactory(Items.CLOCK, 5, 1, 15), new SellItemFactory(Items.COMPASS, 4, 1, 15)},
                         5, new Factory[]{new SellItemFactory(Items.NAME_TAG, 20, 1, 30),new EnchantmentIngredientsFactory(25, 5),})));
 
-        Map<VillagerProfession, Int2ObjectMap<Factory[]>> map = Map.of(
+        /*Map<VillagerProfession, Int2ObjectMap<Factory[]>> map = Map.of(
                 VillagerProfession.CARTOGRAPHER, REBALANCED_PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.CARTOGRAPHER),
                 VillagerProfession.ARMORER,REBALANCED_PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.ARMORER),
                 VillagerProfession.LIBRARIAN,
@@ -48,7 +48,7 @@ public class ModTradeOffers extends TradeOffers {
                         5, new Factory[]{createMasterLibrarianTradeFactory(), new SellItemFactory(Items.NAME_TAG, 20, 1, 30)})));
 
 
-        TradeOffers.REBALANCED_PROFESSION_TO_LEVELED_TRADE = map;
+        TradeOffers.REBALANCED_PROFESSION_TO_LEVELED_TRADE = map;*/
 
     }
 
@@ -173,7 +173,7 @@ public class ModTradeOffers extends TradeOffers {
         }
     }
 
-    private static Factory createLibrarianTradeIngredientFactory(int experience) {
+    /*private static Factory createLibrarianTradeIngredientFactory(int experience) {
         return new betterEnchanting$TypedWrapperFactory(Map.of(
                 VillagerType.DESERT, new RebalancedEnchantmentIngredientsFactory(experience, ModItemTags.ENCHANTEMNT_INGREDIENT),
                 VillagerType.JUNGLE, new RebalancedEnchantmentIngredientsFactory(experience, ModItemTags.ENCHANTEMNT_INGREDIENT),
@@ -219,7 +219,7 @@ public class ModTradeOffers extends TradeOffers {
         public Map<VillagerType, Factory> typeToFactory() {
             return this.typeToFactory;
         }
-    }
+    }*/
 
 
 }

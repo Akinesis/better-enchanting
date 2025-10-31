@@ -7,4 +7,4 @@ accessible method net/minecraft/screen/ScreenHandler addSlot (Lnet/minecraft/scr
 # Fields
 transitive-mutable field net/minecraft/village/TradeOffers REBALANCED_PROFESSION_TO_LEVELED_TRADE Ljava/util/Map;
 accessible field net/minecraft/screen/ScreenHandler trackedStacks Lnet/minecraft/util/collection/DefaultedList;
-accessible field net/minecraft/screen/ScreenHandler previousTrackedStacks Lnet/minecraft/util/collection/DefaultedList;
+#accessible field net/minecraft/screen/ScreenHandler previousTrackedStacks Lnet/minecraft/util/collection/DefaultedList;

@@ -135,8 +135,8 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
                     int increment = 0;
                     if( possibleEnchantments != null && !possibleEnchantments.isEmpty()){
                         for(EnchantmentLevelEntry enchant : possibleEnchantments){
-                            this.enchantmentId[increment] = indexedIterable.getRawId(enchant.enchantment);
-                            this.enchantmentLevel[increment] = enchant.level;
+                            this.enchantmentId[increment] = indexedIterable.getRawId(enchant.enchantment());
+                            this.enchantmentLevel[increment] = enchant.level();
                             increment++;
                         }
                     }

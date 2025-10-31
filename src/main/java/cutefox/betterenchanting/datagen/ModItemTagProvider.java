@@ -22,7 +22,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         BetterEnchanting.LOGGER.info("Generating Item tags for : "+BetterEnchanting.MOD_ID);
 
-        getOrCreateTagBuilder(ModItemTags.LIBRARIAN_RARE_INGREDIENT)
+        valueLookupBuilder(ModItemTags.LIBRARIAN_RARE_INGREDIENT)
                 .add(Items.EXPERIENCE_BOTTLE)
                 .add(Items.TURTLE_SCUTE)
                 .add(Items.WIND_CHARGE)
@@ -31,7 +31,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.QUARTZ)
                 .add(ModItems.MAGIC_SHARD_FULL);
 
-        getOrCreateTagBuilder(ModItemTags.ENCHANTEMNT_INGREDIENT)
+        valueLookupBuilder(ModItemTags.ENCHANTEMNT_INGREDIENT)
                 .add(Items.EXPERIENCE_BOTTLE)
                 .add(Items.PUFFERFISH)
                 .add(Items.GOLDEN_CARROT)
@@ -43,7 +43,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.MAGIC_SHARD_DULL)
                 .add(ModItems.INFUSED_LAPIS);
 
-        getOrCreateTagBuilder(ModItemTags.VANILLA_ESSENCE)
+        valueLookupBuilder(ModItemTags.VANILLA_ESSENCE)
                 .add(ModItems.ESSENCE_OF_EXPERIENCE)
                 .add(ModItems.ESSENCE_OF_ARROWS)
                 .add(ModItems.ESSENCE_OF_FEATHER)
@@ -82,14 +82,14 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.ESSENCE_OF_WIND)
                 .add(ModItems.ESSENCE_OF_BREACH);
 
-        getOrCreateTagBuilder(ModItemTags.ENCHANTMENT_ESSENCE)
+        valueLookupBuilder(ModItemTags.ENCHANTMENT_ESSENCE)
                 .addTag(ModItemTags.VANILLA_ESSENCE)
                 .addTag(ModItemTags.BUMBLEZONE_ESSENCE)
                 .addTag(ModItemTags.NEOENCHANT_ESSENCE)
                 .addTag(ModItemTags.NOVA_ESSENCE)
                 .addTag(ModItemTags.SPELL_POWER_ESSENCE);
 
-        getOrCreateTagBuilder(ModItemTags.NEOENCHANT_ESSENCE)
+        valueLookupBuilder(ModItemTags.NEOENCHANT_ESSENCE)
                 .add(ModItems.ESSENCE_OF_POISON)
                 .add(ModItems.ESSENCE_OF_POISON_PROTECTION)
                 .add(ModItems.ESSENCE_OF_MINING)
@@ -108,12 +108,12 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.ESSENCE_OF_PULLING)
                 .add(ModItems.ESSENCE_OF_FOOD);
 
-        getOrCreateTagBuilder(ModItemTags.BUMBLEZONE_ESSENCE)
+        valueLookupBuilder(ModItemTags.BUMBLEZONE_ESSENCE)
                 .add(ModItems.ESSENCE_OF_POISON)
                 .add(ModItems.ESSENCE_OF_NEUROTOXIN)
                 .add(ModItems.ESSENCE_OF_COMB_CUTTER);
 
-        getOrCreateTagBuilder(ModItemTags.SPELL_POWER_ESSENCE)
+        valueLookupBuilder(ModItemTags.SPELL_POWER_ESSENCE)
                 .add(ModItems.ESSENCE_OF_MULTI_ROLL)
                 .add(ModItems.ESSENCE_OF_LONGFOOT)
                 .add(ModItems.ESSENCE_OF_CRITICAL_SPELL)
@@ -125,58 +125,58 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.ESSENCE_OF_SPELL_INFINITY)
                 .add(ModItems.ESSENCE_OF_SUNFIRE);
 
-        getOrCreateTagBuilder(ModItemTags.NOVA_ESSENCE)
+        valueLookupBuilder(ModItemTags.NOVA_ESSENCE)
                 .add(ModItems.ESSENCE_OF_PHOTOSYNTHESIS)
                 .add(ModItems.ESSENCE_OF_GRAVITY)
                 .add(ModItems.ESSENCE_OF_WINGS);
 
-        getOrCreateTagBuilder(ItemTags.ARMOR_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.ARMOR_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.EQUIPPABLE_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.EQUIPPABLE_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.WEAPON_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.WEAPON_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.FIRE_ASPECT_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.FIRE_ASPECT_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.MACE_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.MACE_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.SHARP_WEAPON_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.SHARP_WEAPON_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.SWORD_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.TRIDENT_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.TRIDENT_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.FISHING_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.FISHING_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.DURABILITY_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.CROSSBOW_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.CROSSBOW_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.MINING_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ItemTags.MINING_LOOT_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.MINING_LOOT_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        getOrCreateTagBuilder(ModItemTags.IRON_UPGRADE_TEMPLATE)
+        valueLookupBuilder(ModItemTags.IRON_UPGRADE_TEMPLATE)
                 .setReplace(false)
                 .add(ModItems.IRON_UPGRADE_SMITHING_TEMPLATE);
 
-        getOrCreateTagBuilder(ModItemTags.DIAMOND_UPGRADE_TEMPLATE)
+        valueLookupBuilder(ModItemTags.DIAMOND_UPGRADE_TEMPLATE)
                 .setReplace(false)
                 .add(ModItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE);
 
