@@ -183,7 +183,7 @@ public class ModEnchantIngredientMap {
         if (!world.isClient){
             Enchantment enchantment;
             for(IngredientData data : ingredientData){
-                enchantment = world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).get(data.getEnchantment_id());
+                enchantment = world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).get(data.getEnchantment_id());
                 customIngredientsDataMap.put(enchantment, data);
             }
         }
