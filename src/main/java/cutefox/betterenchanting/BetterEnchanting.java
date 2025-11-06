@@ -30,12 +30,15 @@ import net.minecraft.resource.ResourceType;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -54,6 +57,7 @@ public class BetterEnchanting implements ModInitializer {
 	public static boolean TOSS_UP_PRESENT = false;
 	public static boolean SPELL_POWER_PRESENT = false;
 	public static boolean COMBAT_ROLL_PRESENT = false;
+	private List<IngredientData> customIngredientData;
 
 	@Override
 	public void onInitialize() {
@@ -61,6 +65,8 @@ public class BetterEnchanting implements ModInitializer {
 		ModConfigConditions.registerConditions();
 
 		checkForCompat();
+
+		customIngredientData = new ArrayList<>();
 
 		MidnightConfig.init("better-enchanting/betterEnchanting", GlobalConfig.class);
 		ModItems.registerModItems();
@@ -86,9 +92,11 @@ public class BetterEnchanting implements ModInitializer {
 					try(InputStream stream = manager.getResource(id).get().getInputStream()) {
 						Reader reader = new InputStreamReader(stream);
 						IngredientData data = gson.fromJson(reader, IngredientData.class);
-						LOGGER.info(data.getEnchantment_id().toString());
-						LOGGER.info("Count : " + data.getIngredients().get(0).getCount());
-						// Consume the stream however you want, medium, rare, or well done.
+//						LOGGER.info(data.getEnchantment_id().toString());
+//						LOGGER.info("Count : " + data.getIngredients().get(0).getCount());
+
+						customIngredientData.add(data);
+
 					} catch(Exception e) {
 						LOGGER.error("Error occurred while loading resource json " + id.toString(), e);
 					}
@@ -138,6 +146,7 @@ public class BetterEnchanting implements ModInitializer {
 			}
 
 			ModEnchantIngredientMap.genMapFromJson(e.getWorld(ServerWorld.OVERWORLD));
+			ModEnchantIngredientMap.buildCustomIngredientDataMap(e.getWorld(ServerWorld.OVERWORLD), customIngredientData);
 		});
 
 		ServerLifecycleEvents.SERVER_STARTING.register(e -> {
