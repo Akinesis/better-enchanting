@@ -101,6 +101,9 @@ public class ModEnchantmentHelper {
             return GlobalConfig.overidenItemCost;
         }
 
+        int cost = ModEnchantIngredientMap.getCostOfLevel(value, displayedEnchantLevel);
+        if (cost > 0)
+            return cost;
 
         int tempValue = (int)Math.floor(value.getWeight()/2);
         if (value.getMaxLevel() == displayedEnchantLevel)

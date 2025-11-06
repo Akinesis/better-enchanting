@@ -8,12 +8,14 @@ import com.google.gson.stream.JsonReader;
 import com.telepathicgrunt.the_bumblezone.modinit.BzEnchantments;
 import com.telepathicgrunt.the_bumblezone.modinit.BzItems;
 import cutefox.betterenchanting.BetterEnchanting;
+import cutefox.betterenchanting.Util.IngredientData;
 import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.registry.ModItems;
 import io.netty.buffer.ByteBuf;
 import net.bunten.enderscape.registry.EnderscapeItems;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -38,7 +40,7 @@ public class ModEnchantIngredientMap {
     private static HashMap<Enchantment, List<Item>> externalEnchantmentIngredientsMap = new HashMap<>();
     private static HashMap<Enchantment, List<Item>> modedmap = new HashMap<>();
     public static Map<String, List<String>> jsonMap = new HashMap<>();
-
+    public static Map<Enchantment, IngredientData> customIngredientsDataMap = new HashMap<>();
 
     static{
         //Armor enchantment
@@ -177,6 +179,17 @@ public class ModEnchantIngredientMap {
         }
     }
 
+    public static void buildCustomIngredientDataMap(World world, List<IngredientData> ingredientData){
+        if (!world.isClient){
+            Enchantment enchantment;
+            for(IngredientData data : ingredientData){
+                enchantment = world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).get(data.getEnchantment_id());
+                customIngredientsDataMap.put(enchantment, data);
+            }
+        }
+
+    }
+
     /**
      * Add the ingredients for the enchantment of the identifier in parameters
      * If possible, prefer the {@link #addEnchantmentIngredient(Enchantment, List)} of this call.
@@ -253,11 +266,28 @@ public class ModEnchantIngredientMap {
     };
 
     public static Item getIngredientOfLevel(Enchantment enchantment, int enchantmentLevel){
-        if(ENCHANTMENT_INGREDIENTS_MAP.containsKey(enchantment))
-            if(ENCHANTMENT_INGREDIENTS_MAP.get(enchantment).size()>enchantmentLevel)
-                return ENCHANTMENT_INGREDIENTS_MAP.get(enchantment).get(enchantmentLevel);
 
-        return null;
+        //BetterEnchanting.LOGGER.info("Custom enchant size : "+customIngredientsDataMap.size());
+        Item ingredient = null;
+
+        if(customIngredientsDataMap.containsKey(enchantment))
+            ingredient= customIngredientsDataMap.get(enchantment).getIngredientForLevel(enchantmentLevel);
+
+        if(ingredient == null)
+            if(ENCHANTMENT_INGREDIENTS_MAP.containsKey(enchantment))
+                if(ENCHANTMENT_INGREDIENTS_MAP.get(enchantment).size()>enchantmentLevel)
+                    ingredient = ENCHANTMENT_INGREDIENTS_MAP.get(enchantment).get(enchantmentLevel);
+
+        return ingredient;
+    }
+
+    public static int getCostOfLevel(Enchantment enchantment, int level){
+
+        int cost = 0;
+        if(customIngredientsDataMap.containsKey(enchantment))
+            cost= customIngredientsDataMap.get(enchantment).getIngredientCostForLevel(level);
+
+        return cost;
     }
 
     public static void loadNeoEnchantConfig(){
