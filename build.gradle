@@ -57,32 +57,32 @@ dependencies {
 	//Add optional dependencies
 
 	//Incantatonionem
-	modCompileOnly "maven.modrinth:incantationem:ivGrgU5k"
+	//modCompileOnly "maven.modrinth:incantationem:ivGrgU5k"
 
 	//Horseshoes
-	modCompileOnly "maven.modrinth:tyg1IZwj:${project.horseshoes_version_id}"
+	//modCompileOnly "maven.modrinth:tyg1IZwj:${project.horseshoes_version_id}"
 
 	//Enderscape
 	modCompileOnly "maven.modrinth:btCrWvHr:${project.enderscape_version_id}"
 
 	//The Bumblezone
-	modCompileOnly "maven.modrinth:eA8SXqWL:${project.bublezone_version_id}"
-	modCompileOnly "com.teamresourceful.resourcefullib:resourcefullib-fabric-1.21:3.0.11"
+	//modCompileOnly "maven.modrinth:eA8SXqWL:${project.bublezone_version_id}"
+	//modCompileOnly "com.teamresourceful.resourcefullib:resourcefullib-fabric-1.21:3.0.11"
 
 	//Midnight lib for config
 	modImplementation include ("maven.modrinth:midnightlib:${project.midnightlib_version}")
 	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
 
 	//Spell engine
-	modCompileOnly("maven.modrinth:spell-engine:${project.spell_engine_version}")
+	//modCompileOnly("maven.modrinth:spell-engine:${project.spell_engine_version}")
 	//Spell power
-	modCompileOnly("maven.modrinth:8ooWzSQP:Yr88WIqG")
+	//modCompileOnly("maven.modrinth:8ooWzSQP:Yr88WIqG")
 	//Cloth config
-	modCompileOnly("maven.modrinth:9s6osm5g:cz0b1j8R")
+	//modCompileOnly("maven.modrinth:9s6osm5g:cz0b1j8R")
 	//player animator
-	modCompileOnly("maven.modrinth:gedNE4y2:c6DQKGQp")
+	//modCompileOnly("maven.modrinth:gedNE4y2:c6DQKGQp")
 	//trinkets
-	modCompileOnly("maven.modrinth:5aaWibi9:JagCscwi")
+	//modCompileOnly("maven.modrinth:5aaWibi9:JagCscwi")
 
 }
 

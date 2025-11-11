@@ -5,8 +5,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
-import com.telepathicgrunt.the_bumblezone.modinit.BzEnchantments;
-import com.telepathicgrunt.the_bumblezone.modinit.BzItems;
 import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.Util.IngredientData;
 import cutefox.betterenchanting.Util.Utils;
@@ -15,7 +13,6 @@ import io.netty.buffer.ByteBuf;
 import net.bunten.enderscape.registry.EnderscapeItems;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -183,7 +180,7 @@ public class ModEnchantIngredientMap {
         if (!world.isClient){
             Enchantment enchantment;
             for(IngredientData data : ingredientData){
-                enchantment = world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).get(data.getEnchantment_id());
+                enchantment = world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).get(data.getEnchantment_id());
                 customIngredientsDataMap.put(enchantment, data);
             }
         }
@@ -331,12 +328,12 @@ public class ModEnchantIngredientMap {
 
     }
 
-    public static void loadBumblezoneConfig(){
+    /*public static void loadBumblezoneConfig(){
         defaultMap.put(BzEnchantments.NEUROTOXINS.toString(), listOfIdentifiers(List.of(BzItems.BEE_SOUP.get(),ModItems.ESSENCE_OF_NEUROTOXIN)));
         defaultMap.put(BzEnchantments.POTENT_POISON.toString(), listOfIdentifiers(List.of(Items.FERMENTED_SPIDER_EYE,Items.PUFFERFISH_BUCKET,ModItems.ESSENCE_OF_POISON)));
         defaultMap.put(BzEnchantments.COMB_CUTTER.toString(), listOfIdentifiers(List.of(BzItems.POROUS_HONEYCOMB.get(),ModItems.ESSENCE_OF_COMB_CUTTER)));
 
-    }
+    }*/
 
     public static void loadDungeonsAndTavernsConfig() {
         defaultMap.put("nova_structures:antidote", listOfIdentifiers(List.of(ModItems.ESSENCE_OF_POISON_PROTECTION)));

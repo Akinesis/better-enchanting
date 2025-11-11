@@ -1,6 +1,9 @@
 package cutefox.betterenchanting;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import cutefox.betterenchanting.Util.EnchantingIngredientMapPayload;
+import cutefox.betterenchanting.Util.IngredientData;
 import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.conditions.ModConfigConditions;
 import cutefox.betterenchanting.config.GlobalConfig;
@@ -13,12 +16,17 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.resource.Resource;
+import net.minecraft.resource.ResourceManager;
+import net.minecraft.resource.ResourceType;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -33,6 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
+
 
 public class BetterEnchanting implements ModInitializer {
 
@@ -165,7 +174,7 @@ public class BetterEnchanting implements ModInitializer {
 		if(FabricLoader.getInstance().isModLoaded("the_bumblezone")){
 			LOGGER.info("Mod Bumblezone is present and loaded ; Building compat for "+BetterEnchanting.MOD_ID);
 			BUMBLEZONE_PRESENT = true;
-			ModEnchantIngredientMap.loadBumblezoneConfig();
+			//ModEnchantIngredientMap.loadBumblezoneConfig();
 		}
 
 		if(FabricLoader.getInstance().isModLoaded("incantationem")){

@@ -36,8 +36,10 @@ import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Environment(EnvType.CLIENT)
 public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScreenHandler> {
@@ -424,7 +426,13 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
 
                             //Add name to tooltip
                             mutableText = Text.translatable(Enchantment.getName(enchant.get(), displayedEnchantLevel).getString()).formatted(Formatting.WHITE);
+                            //ItemStack enchantedBook = new ItemStack(Items.ENCHANTED_BOOK);
+                            List<RegistryEntry<Enchantment>> registryEntryStream = new ArrayList<>();
+                            registryEntryStream.add(enchantEntry);
+                            //EnchantmentHelper.enchant(random,enchantedBook,l,registryEntryStream.stream());
+                            //list.addAll(getTooltipFromItem(enchantedBook));
                             list.add(mutableText);
+
 
                             boolean hasEnchantLevel = EnchantmentHelper.getLevel(enchantEntry,stack)>=l+1;
 
