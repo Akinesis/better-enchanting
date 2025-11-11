@@ -21,9 +21,18 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import net.minecraft.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 public class BetterEnchanting implements ModInitializer {
 
@@ -39,6 +48,7 @@ public class BetterEnchanting implements ModInitializer {
 	public static boolean TOSS_UP_PRESENT = false;
 	public static boolean SPELL_POWER_PRESENT = false;
 	public static boolean COMBAT_ROLL_PRESENT = false;
+	private List<IngredientData> customIngredientData;
 
 	@Override
 	public void onInitialize() {
@@ -46,6 +56,8 @@ public class BetterEnchanting implements ModInitializer {
 		ModConfigConditions.registerConditions();
 
 		checkForCompat();
+
+		customIngredientData = new ArrayList<>();
 
 		MidnightConfig.init("better-enchanting/betterEnchanting", GlobalConfig.class);
 		ModItems.registerModItems();
@@ -55,6 +67,33 @@ public class BetterEnchanting implements ModInitializer {
 		ModTradeOffers.removeEnchantedBooks();
 		ModItemTags.registerModTags();
 		ModLootTables.registerLootTables();
+
+		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new SimpleSynchronousResourceReloadListener() {
+			@Override
+			public Identifier getFabricId() {
+				return Utils.id("enchanting");
+			}
+
+			@Override
+			public void reload(ResourceManager manager) {
+				// Clear Caches Here
+				Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+				for(Identifier id : manager.findResources("enchanting", path -> path.toString().endsWith(".json")).keySet()) {
+					try(InputStream stream = manager.getResource(id).get().getInputStream()) {
+						Reader reader = new InputStreamReader(stream);
+						IngredientData data = gson.fromJson(reader, IngredientData.class);
+//						LOGGER.info(data.getEnchantment_id().toString());
+//						LOGGER.info("Count : " + data.getIngredients().get(0).getCount());
+
+						customIngredientData.add(data);
+
+					} catch(Exception e) {
+						LOGGER.error("Error occurred while loading resource json " + id.toString(), e);
+					}
+				}
+			}
+		});
 
 		//Registry.register(Registries.ITEM_GROUP, Utils.id("item_group"), ITEM_GROUP);
 		Registry.register(Registries.ITEM_GROUP, Utils.id("item_group"), generateItemGroup());
@@ -98,6 +137,7 @@ public class BetterEnchanting implements ModInitializer {
 			}
 
 			ModEnchantIngredientMap.genMapFromJson(e.getWorld(ServerWorld.OVERWORLD));
+			ModEnchantIngredientMap.buildCustomIngredientDataMap(e.getWorld(ServerWorld.OVERWORLD), customIngredientData);
 		});
 
 		ServerLifecycleEvents.SERVER_STARTING.register(e -> {
