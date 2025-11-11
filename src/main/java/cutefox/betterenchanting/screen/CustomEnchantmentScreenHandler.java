@@ -167,13 +167,13 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
             ItemStack enchantMaterialStack = this.inventory.getStack(2);
 
 
-            Optional<RegistryEntry.Reference<Enchantment>> enchant =  player.getWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getEntry(this.enchantmentId[id]);
+            Optional<RegistryEntry.Reference<Enchantment>> enchant =  player.getEntityWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getEntry(this.enchantmentId[id]);
 
             if(!enchant.isEmpty()){
                 Enchantment enchantment = enchant.get().value();
                 RegistryEntry<Enchantment> enchantEntry1 = enchant.get();//player.getWorld().getRegistryManager().get(RegistryKeys.ENCHANTMENT).getEntry(enchantment);
                 int displayedEnchantLevel = level + 1;
-                int enchantLevelCost = ModEnchantmentHelper.getEnchantmentLevelCost(enchantment,displayedEnchantLevel,itemToEnchant, player.getWorld());
+                int enchantLevelCost = ModEnchantmentHelper.getEnchantmentLevelCost(enchantment,displayedEnchantLevel,itemToEnchant, player.getEntityWorld());
                 int enchantLevReq = ModEnchantmentHelper.getEnchantmentLeveRequierment(enchantment,displayedEnchantLevel);
                 //Item enchantIngredient = ModEnchantmentHelper.getEnchantIngredient(enchantEntry1.getKey().get(), level);
                 Item enchantIngredient = ModEnchantmentHelper.getEnchantIngredient(enchantment, level);

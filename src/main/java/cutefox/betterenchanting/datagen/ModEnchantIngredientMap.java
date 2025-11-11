@@ -140,7 +140,7 @@ public class ModEnchantIngredientMap {
                 writer.close();
             }
 
-            if (!world.isClient){
+            if (!world.isClient()){
                 genMapFromJsonStringMap(world, jsonMap);
             }
         } catch (Exception e){
@@ -177,7 +177,7 @@ public class ModEnchantIngredientMap {
     }
 
     public static void buildCustomIngredientDataMap(World world, List<IngredientData> ingredientData){
-        if (!world.isClient){
+        if (!world.isClient()){
             Enchantment enchantment;
             for(IngredientData data : ingredientData){
                 enchantment = world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).get(data.getEnchantment_id());

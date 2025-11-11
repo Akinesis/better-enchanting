@@ -8,6 +8,7 @@ import cutefox.betterenchanting.Util.Utils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gl.RenderPipelines;
+import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.DiffuseLighting;
@@ -34,6 +35,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.village.TradeOfferList;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
@@ -89,7 +91,11 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
         this.doTick();
     }
 
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+    public boolean mouseClicked(Click click, boolean doubled) {
+
+        double mouseX = click.x();
+        double mouseY =click.y();
+        int button = click.button();
         int width = (this.width - this.backgroundWidth) / 2;
         int height = (this.height - this.backgroundHeight) / 2;
 
@@ -124,7 +130,7 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
                     int computedButtonId = (k*10)+l;
 
                     if (k >=indexStartOffset+7)
-                        return super.mouseClicked(mouseX, mouseY, button);
+                        return super.mouseClicked(click, doubled);
 
                     if (r >= 0 && s >= 0 && r < 15 && s < 15 && this.handler.onButtonClick(this.client.player, computedButtonId)) {
                         selectedSlot[0] = k;
@@ -136,7 +142,7 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
             }
         }
 
-        return super.mouseClicked(mouseX, mouseY, button);
+        return super.mouseClicked(click, doubled);
     }
 
     protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
@@ -508,18 +514,18 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
     }
 
     @Override
-    public boolean mouseDragged(double mouseX, double mouseY, int button, double deltaX, double deltaY) {
+    public boolean mouseDragged(Click click, double offsetX, double offsetY) {
         int i = handler.totalEnchantForItem();
         if (this.scrolling) {
             int j = this.y + 13;
             int k = j + 112;
             int l = i - 7;
-            float f = ((float)mouseY - (float)j - 13.5f) / ((float)(k - j) - 27.0f);
+            float f = ((float)click.y() - (float)j - 13.5f) / ((float)(k - j) - 27.0f);
             f = f * (float)l + 0.5f;
             this.indexStartOffset = MathHelper.clamp((int)f, 0, l);
             return true;
         }
-        return super.mouseDragged(mouseX, mouseY, button, deltaX, deltaY);
+        return super.mouseDragged(click, offsetX, offsetY);
     }
 
     private void renderScrollbar(DrawContext context, int x, int y,int totalNumberOfEnchants) {
