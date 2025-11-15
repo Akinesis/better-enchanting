@@ -160,7 +160,7 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
             if(this.client.player.experienceLevel < CustomEnchantmentScreenHandler.SHARD_FILLING_EXPERIENCE_COST)
                 q = Colors.RED;
 
-            context.drawGuiTexture(RenderPipelines.GUI,MAGIC_SHARD_FULL, 72,14,16,16);
+            context.drawGuiTexture(RenderPipelines.GUI_TEXTURED,MAGIC_SHARD_FULL, 72,14,16,16);
 
             if(!playerInCreative)
                 context.drawTextWithShadow(this.textRenderer, ""+CustomEnchantmentScreenHandler.SHARD_FILLING_EXPERIENCE_COST, 18+72 - this.textRenderer.getWidth(""+CustomEnchantmentScreenHandler.SHARD_FILLING_EXPERIENCE_COST), 14+8, q);
@@ -426,11 +426,8 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
 
                             //Add name to tooltip
                             mutableText = Text.translatable(Enchantment.getName(enchant.get(), displayedEnchantLevel).getString()).formatted(Formatting.WHITE);
-                            //ItemStack enchantedBook = new ItemStack(Items.ENCHANTED_BOOK);
                             List<RegistryEntry<Enchantment>> registryEntryStream = new ArrayList<>();
                             registryEntryStream.add(enchantEntry);
-                            //EnchantmentHelper.enchant(random,enchantedBook,l,registryEntryStream.stream());
-                            //list.addAll(getTooltipFromItem(enchantedBook));
                             list.add(mutableText);
 
 
