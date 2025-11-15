@@ -103,6 +103,8 @@
   "better-enchanting/betterEnchanting.midnightconfig.title":"Better Enchanting Global Config",
   "better-enchanting/betterEnchanting.midnightconfig.disabledEnchants":"Disabled enchantments",
   "better-enchanting/betterEnchanting.midnightconfig.allowBookInAnvil":"Allow enchanted book in anvil",
+  "better-enchanting/betterEnchanting.midnightconfig.freeAnvilRepair":"Repair in anvil is free",
+  "better-enchanting/betterEnchanting.midnightconfig.disableCatalystFusion":"Disable Catalyst fusion",
   "better-enchanting/betterEnchanting.midnightconfig.costSection":"Values regarding cost for the mod",
   "better-enchanting/betterEnchanting.midnightconfig.shardFillingLapisCost":"Lapis cost of magic shard filling",
   "better-enchanting/betterEnchanting.midnightconfig.shardFillingExperienceCost":"Experience cost of magic shard filling",

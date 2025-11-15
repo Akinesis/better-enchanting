@@ -62,7 +62,7 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandlerMixin{
                 levelCost.set(betterEnchanting$customCost);
                 ci.cancel();
 
-            }else if(secondStack.getItem().equals(ModItems.ENCHANTMENT_CATALYST) && firstStack.getItem().equals(ModItems.ENCHANTMENT_CATALYST)){
+            }else if(secondStack.getItem().equals(ModItems.ENCHANTMENT_CATALYST) && firstStack.getItem().equals(ModItems.ENCHANTMENT_CATALYST) && !GlobalConfig.disableCatalystFusion){
                 ItemStack outputStack = firstStack.copy();
                 outputStack.set(DataComponentTypes.MAX_STACK_SIZE,1);
 
@@ -118,24 +118,27 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandlerMixin{
 
     @Inject(method = "updateResult", at = @At("HEAD"))
     public void betterEnchanting$resetMaterialLevelCost(CallbackInfo ci) {
-        betterEnchanting$materialRepairLevelCost = 0;
+        if(GlobalConfig.freeAnvilRepair)
+            betterEnchanting$materialRepairLevelCost = 0;
     }
 
     @Inject(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;setDamage(I)V", ordinal = 0))
     public void betterEnchanting$addMaterialLevelCost(CallbackInfo ci) {
-        betterEnchanting$materialRepairLevelCost++;
+        if(GlobalConfig.freeAnvilRepair)
+            betterEnchanting$materialRepairLevelCost++;
     }
 
     @Inject(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/screen/AnvilScreenHandler;getNextCost(I)I"), locals = LocalCapture.CAPTURE_FAILHARD)
     public void betterEnchanting$getShouldAddRepairCost(CallbackInfo ci, ItemStack itemStack, int i, long l, int j) {
-        betterEnchanting$shouldAddRepairCost = i - betterEnchanting$materialRepairLevelCost > 0 || j > 0;
+        if(GlobalConfig.freeAnvilRepair)
+            betterEnchanting$shouldAddRepairCost = i - betterEnchanting$materialRepairLevelCost > 0 || j > 0;
     }
 
     @Redirect(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/screen/AnvilScreenHandler;getNextCost(I)I"))
     public int betterEnchanting$getNextCostConditional(int cost) {
         // Only increase repairCost of the item if the increase is not caused by
         // material repair
-        if (!betterEnchanting$shouldAddRepairCost) {
+        if (!betterEnchanting$shouldAddRepairCost && GlobalConfig.freeAnvilRepair) {
             return cost;
         }
         return AnvilScreenHandler.getNextCost(cost);
@@ -147,12 +150,13 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandlerMixin{
             cancellable = true)
     public void betterEnchanting$preventRepaireCost(CallbackInfo ci, ItemStack itemStack, int i, long l, int j, ItemStack itemStack2){
         AnvilScreenHandler screenHandler = (AnvilScreenHandler) (Object) this;
-
-        levelCost.set(j);
+        if(GlobalConfig.freeAnvilRepair)
+            levelCost.set(j);
     }
 
     @Inject(method = "canTakeOutput", at = @At("HEAD"), cancellable = true)
     public void betterEnchanting$canTakeFreeOutput(PlayerEntity player, boolean present, CallbackInfoReturnable<Boolean> cir){
-        cir.setReturnValue((player.isInCreativeMode() || player.experienceLevel >= this.levelCost.get()) && this.levelCost.get() >= 0);
+        if(GlobalConfig.freeAnvilRepair)
+            cir.setReturnValue((player.isInCreativeMode() || player.experienceLevel >= this.levelCost.get()) && this.levelCost.get() >= 0);
     }
 }
