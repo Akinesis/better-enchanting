@@ -407,11 +407,8 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
 
                             //Add name to tooltip
                             mutableText = Text.translatable(Enchantment.getName(enchant.get(), displayedEnchantLevel).getString()).formatted(Formatting.WHITE);
-                            ItemStack enchantedBook = new ItemStack(Items.ENCHANTED_BOOK);
                             List<RegistryEntry<Enchantment>> registryEntryStream = new ArrayList<>();
                             registryEntryStream.add(enchantEntry);
-                            EnchantmentHelper.enchant(random,enchantedBook,l,registryEntryStream.stream());
-                            list.addAll(getTooltipFromItem(enchantedBook));
                             list.add(mutableText);
 
 
