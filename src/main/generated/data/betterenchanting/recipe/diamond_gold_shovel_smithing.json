@@ -3,7 +3,6 @@
   "addition": "minecraft:diamond",
   "base": "minecraft:golden_shovel",
   "result": {
-    "count": 1,
     "id": "minecraft:diamond_shovel"
   },
   "template": "betterenchanting:diamond_upgrade_smithing_template"

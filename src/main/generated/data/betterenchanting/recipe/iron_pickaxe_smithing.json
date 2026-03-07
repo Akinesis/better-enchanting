@@ -3,7 +3,6 @@
   "addition": "minecraft:iron_ingot",
   "base": "minecraft:stone_pickaxe",
   "result": {
-    "count": 1,
     "id": "minecraft:iron_pickaxe"
   },
   "template": "betterenchanting:iron_upgrade_smithing_template"

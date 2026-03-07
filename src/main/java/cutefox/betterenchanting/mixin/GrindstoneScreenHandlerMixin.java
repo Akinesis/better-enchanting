@@ -1,8 +1,8 @@
 package cutefox.betterenchanting.mixin;
 
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import com.terraformersmc.modmenu.util.mod.Mod;
-import cutefox.betterenchanting.config.GlobalConfig;
+//import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+//import com.terraformersmc.modmenu.util.mod.Mod;
+//import cutefox.betterenchanting.config.GlobalConfig;
 import cutefox.betterenchanting.registry.ModItems;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.component.DataComponentTypes;
