@@ -103,6 +103,8 @@
   "better-enchanting/betterEnchanting.midnightconfig.title":"Configuration gloable pour Better Enchanting",
   "better-enchanting/betterEnchanting.midnightconfig.disabledEnchants":"Enchantments désactivés",
   "better-enchanting/betterEnchanting.midnightconfig.allowBookInAnvil":"Autoriser livre enchanté à l'enclume",
+  "better-enchanting/betterEnchanting.midnightconfig.freeAnvilRepair":"Réparations gratuites à l'enclume",
+  "better-enchanting/betterEnchanting.midnightconfig.disableCatalystFusion":"Désactiver la fusion des Catalyseurs",
   "better-enchanting/betterEnchanting.midnightconfig.costSection":"Options des coûts du mod",
   "better-enchanting/betterEnchanting.midnightconfig.shardFillingLapisCost":"Coûts en lapis de charge d'un écalt magique",
   "better-enchanting/betterEnchanting.midnightconfig.shardFillingExperienceCost":"Coûts en expérience de charge d'un écalt magique",

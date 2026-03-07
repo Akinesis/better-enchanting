@@ -13,6 +13,8 @@ public class GlobalConfig extends MidnightConfig {
 
     @Entry(category = GLOBAL, idMode = 2) public static List<Identifier> disabledEnchants = Lists.newArrayList(Identifier.of("namespace","enchantment"));
     @Entry(category = GLOBAL) public static boolean  allowBookInAnvil = false;
+    @Entry(category = GLOBAL) public static boolean  freeAnvilRepair = true;
+    @Entry(category = GLOBAL) public static boolean  disableCatalystFusion = false;
     @Comment(category = GLOBAL) public static Comment spacer1;
     @Comment(category = GLOBAL) public static Comment costSection;
     @Entry(category = GLOBAL) public static int shardFillingLapisCost = 3;

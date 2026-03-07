@@ -19,6 +19,7 @@ import net.minecraft.item.Items;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
@@ -129,7 +130,7 @@ public class ModEnchantIngredientMap {
             reader.close();
 
             //get enchant present in default map but not in config and
-            Map<String, List<String>> missingEntries = getEnchantNotPresentInConfig();
+            Map<String, List<String>> missingEntries = getEnchantNotPresentInConfig(world);
 
             //Append entries not present in config file
             if(!missingEntries.isEmpty()){
@@ -229,7 +230,7 @@ public class ModEnchantIngredientMap {
         return list;
     }
 
-    private static Map<String, List<String>> getEnchantNotPresentInConfig() throws Exception{
+    private static Map<String, List<String>> getEnchantNotPresentInConfig(World world) throws Exception{
 
         Map<String, List<String>> missingEntries = new HashMap<>();
 
@@ -237,6 +238,19 @@ public class ModEnchantIngredientMap {
             if(!jsonMap.keySet().contains(enchant))
                 missingEntries.put(enchant, defaultMap.get(enchant));
         }
+
+        Set<Map.Entry<RegistryKey<Enchantment>, Enchantment>> entrySet = world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getEntrySet();
+
+        entrySet.forEach(entry -> {
+            if(!jsonMap.keySet().contains(entry.getKey().getValue().toString())){
+                List<String> barrierList = new ArrayList<>();
+                for(int i = 0; i<entry.getValue().getMaxLevel();i++){
+                    barrierList.add("minecraft:barrier");
+                }
+                missingEntries.put(entry.getKey().getValue().toString(), barrierList);
+            }
+
+        });
 
         return missingEntries;
     }
