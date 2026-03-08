@@ -34,7 +34,7 @@
 	"accessWidener" : "betterenchanting.accesswidener",
 	"depends": {
 		"fabricloader": ">=0.17.1",
-		"minecraft": "=1.21.10",
+		"minecraft": "=1.21.11",
 		"java": ">=21",
 		"fabric-api": "*"
 	},

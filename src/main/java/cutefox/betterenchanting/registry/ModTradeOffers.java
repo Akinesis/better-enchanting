@@ -13,9 +13,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.village.*;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.World;
+import org.jspecify.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -66,8 +68,9 @@ public class ModTradeOffers extends TradeOffers {
             this.tradeLevel = level;
         }
 
+
         @Override
-        public TradeOffer create(Entity entity, Random random) {
+        public @Nullable TradeOffer create(ServerWorld world, Entity entity, Random random) {
             int l;
             ItemStack itemStack;
             RegistryEntryList.Named<Item> ingredients = Registries.ITEM.getOrThrow(ModItemTags.ENCHANTEMNT_INGREDIENT);
@@ -133,7 +136,7 @@ public class ModTradeOffers extends TradeOffers {
         }
 
         @Override
-        public TradeOffer create(Entity entity, Random random) {
+        public TradeOffer create(ServerWorld serverworld,Entity entity, Random random) {
             int l;
             ItemStack itemStack;
             RegistryEntryList.Named<Item> ingredients = Registries.ITEM.getOrThrow(ModItemTags.ENCHANTEMNT_INGREDIENT);

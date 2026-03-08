@@ -3,7 +3,6 @@
   "addition": "minecraft:diamond",
   "base": "minecraft:iron_sword",
   "result": {
-    "count": 1,
     "id": "minecraft:diamond_sword"
   },
   "template": "betterenchanting:diamond_upgrade_smithing_template"

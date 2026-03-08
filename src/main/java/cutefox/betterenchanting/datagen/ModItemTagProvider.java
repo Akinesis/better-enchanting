@@ -148,7 +148,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ItemTags.SHARP_WEAPON_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
-        valueLookupBuilder(ItemTags.SWORD_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.SWEEPING_ENCHANTABLE)
+                .add(ModItems.ENCHANTMENT_CATALYST);
+
+        valueLookupBuilder(ItemTags.SHARP_WEAPON_ENCHANTABLE)
                 .add(ModItems.ENCHANTMENT_CATALYST);
 
         valueLookupBuilder(ItemTags.TRIDENT_ENCHANTABLE)

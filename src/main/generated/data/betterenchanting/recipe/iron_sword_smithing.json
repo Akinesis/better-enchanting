@@ -3,7 +3,6 @@
   "addition": "minecraft:iron_ingot",
   "base": "minecraft:stone_sword",
   "result": {
-    "count": 1,
     "id": "minecraft:iron_sword"
   },
   "template": "betterenchanting:iron_upgrade_smithing_template"
